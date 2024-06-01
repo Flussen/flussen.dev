@@ -39,14 +39,23 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
       <footer class="no-print">
         {
           email && (
-            <a
-              href={`mailto:${email}`}
-              title={`Send an e-mail to ${name} at ${email}.`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Mail />
-            </a>
+            <div class="mailing">
+              <a
+                href={`mailto:${email}`}
+                title={`Send an email to ${name}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style="margin-right:0.3rem;"
+              >
+                <div class="mail-icon">
+                  <Mail />
+                </div>
+              </a>
+              <p onclick="copyEmail('{email}')">{email}</p>
+              <span id="copy-notification" class="copy-notification">
+                Copied!
+              </span>
+            </div>
           )
         }
         {
@@ -68,7 +77,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
             return (
               <a
                 href={url}
-                title={`Visit ${name}'s profile in ${network}`}
+                title={`Visit ${username}'s profile in ${network}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -141,7 +150,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #eee;
+    border: 1px solid #d8d8d8;
     padding: 4px;
     height: 32px;
     width: 32px;
@@ -179,5 +188,37 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
     figure {
       margin: 0 auto;
     }
+  }
+
+  .mailing {
+    color: #777;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d8d8d8;
+    padding-right: 10px;
+    height: 32px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .mail-icon {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .copy-notification {
+    display: none;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    background: #4caf50;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.75rem;
   }
 </style>
