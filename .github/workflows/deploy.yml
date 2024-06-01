@@ -39,5 +39,6 @@ jobs:
       run: |
         echo "$SSH_PRIVATE_KEY" | tr -d '\r' > private_key
         chmod 600 private_key
+        ssh -o StrictHostKeyChecking=no -i private_key $VPS_USER@$VPS_HOST "rm -rf /var/www/flussen.dev/*"
         scp -o StrictHostKeyChecking=no -i private_key -r curriculum/dist/* $VPS_USER@$VPS_HOST:/var/www/flussen.dev
         rm private_key
