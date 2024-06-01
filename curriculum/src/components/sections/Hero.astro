@@ -8,6 +8,8 @@ import LinkedIn from "@/icons/LinkedIn.astro";
 import GitHub from "@/icons/GitHub.astro";
 import WorldMap from "@/icons/WorldMap.astro";
 import type { SocialIcon } from "@/types";
+import Venezuela from "@/icons/venezuela.astro";
+import Austria from "@/icons/austria.astro";
 
 const { name, label, image, location, profiles, phone, email } = basics;
 const { city, region } = location;
@@ -16,6 +18,11 @@ const SOCIAL_ICONS: SocialIcon = {
   GitHub,
   LinkedIn,
   X,
+};
+
+const COUNTRYS_ICONS: Record<string, any> = {
+  Venezuela,
+  Austria,
 };
 
 const linkedInfo = profiles.find(({ network }) => network === "LinkedIn");
@@ -31,7 +38,9 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
       <h2>{label}</h2>
       <span>
         <WorldMap />
-        {city}, {region}
+        {city}, {region} <span/>
+        <Austria />
+        <Venezuela />
       </span>
       <footer class="print">
         {printInfo}
@@ -51,10 +60,7 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
                   <Mail />
                 </div>
               </a>
-              <p onclick="copyEmail('{email}')">{email}</p>
-              <span id="copy-notification" class="copy-notification">
-                Copied!
-              </span>
+              <p>{email}</p>
             </div>
           )
         }
@@ -208,17 +214,5 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" • ");
     align-items: center;
     text-decoration: none;
     color: inherit;
-  }
-
-  .copy-notification {
-    display: none;
-    position: absolute;
-    top: -20px;
-    right: 0;
-    background: #4caf50;
-    color: white;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-size: 0.75rem;
   }
 </style>
