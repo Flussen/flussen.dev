@@ -1,0 +1,42 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'curriculum/**' # It is only triggered when there are changes in the resume folder
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4.1.6
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4.0.2
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: |
+        cd curriculum
+        npm install -g pnpm
+        pnpm install
+
+    - name: Build project
+      run: |
+        cd curriculum
+        pnpm build
+
+    - name: Copy files via SSH
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        VPS_USER: ${{ secrets.VPS_USER }}
+        VPS_HOST: ${{ secrets.VPS_HOST }}
+      run: |
+        echo "$SSH_PRIVATE_KEY" > private_key
+        chmod 600 private_key
+        scp -o StrictHostKeyChecking=no -i private_key -r curriculum/dist/* $VPS_USER@$VPS_HOST:/var/www/flussen.dev
