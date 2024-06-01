@@ -1,0 +1,182 @@
+{
+  "basics": {
+    "name": "Alexander Rios",
+    "label": "Backend Developer specialized in Golang and Java, Spring Boot",
+    "image": "/me.webp",
+    "email": "flussen0@gmail.com",
+    "url": "https://flussen.dev",
+    "summary": "Junior Backend Developer specialized in Golang and Java. I have built everything from a passwordmanager to cybersecurity tools and APIs, using technologies like Spring Boot, Fiber, and Gin. My expertisealso extends to AWS and containerization with Docker, which enhance the development projects andoperational efficiency. Passionate about cybersecurity and proficient in Bash/Shell scripting, I skillfullymanage various Linux distributions. My commitment to continuous learning drives my professional growthin the dynamic tech landscape.",
+    "location": {
+      "postalCode": "6462",
+      "city": "Karres, Tirol",
+      "countryCode": "AT",
+      "region": "Austria"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "Alexander Rios",
+        "url": "https://linkedin.com/in/alexander-rios-8a03b820b/"
+      },
+      {
+        "network": "X",
+        "username": "flussen_",
+        "url": "https://x.com/flussen_"
+      },
+      {
+        "network": "GitHub",
+        "username": "flussen",
+        "url": "https://github.com/Flussen"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Conform Badmöbels",
+      "position": "CnC machinery operator",
+      "url": "https://conformbad.at/",
+      "startDate": "2019-03-01",
+      "endDate": null,
+      "summary": "Currently working as a CnC machine operator, I have learned together with the company and have learnedvarious areas such as teamwork, working on good ideas to achieve quick solutions and continuouslearning efficiency.",
+      "highlights": ["Started the company"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Internal University of Valencia",
+      "url": "https://www.universidadviu.com/int/",
+      "area": "B.Sc. in Computer Engineering",
+      "studyType": "Bachelor",
+      "startDate": "2024-01-01",
+      "endDate": null,
+      "courses": [
+        "Platzi - Golang from Basic to Expert",
+        "Platzi - Java Spring Boot, Security and deployments"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Second Place",
+      "date": "2024-04-01",
+      "awarder": "Devathon",
+      "summary": "https://programacion-es.dev/devathon-vi-edition/ like team 1"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Golang",
+      "level": "Advaced",
+      "keywords": ["Fiber", "Gin", "Backend", "RESTful API", "microservices"]
+    },
+    {
+      "name": "Java",
+      "level": "Medium",
+      "keywords": [
+        "Spring boot",
+        "JPA",
+        "Spring Security",
+        "RESTful API",
+        "microservices",
+        "Backend"
+      ]
+    },
+    {
+      "name": "PostgresQL",
+      "level": "Advanced",
+      "keywords": ["Database", "SQL", "Data Storage", "Backend"]
+    },
+    {
+      "name": "Git",
+      "level": "Advanced",
+      "keywords": ["Version control", "Collaboration", "Source code"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Advanced",
+      "keywords": ["Version control", "Collaboration", "Source code", "Git"]
+    },
+    {
+      "name": "Linux",
+      "level": "Advanced",
+      "keywords": [
+        "Debian",
+        "Arch Linux",
+        "Ubuntu",
+        "Deployment",
+        "Operation System",
+        "Bash/Shell Scripting"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Medium"
+    },
+    {
+      "language": "German",
+      "fluency": "Fluent"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Maths",
+      "keywords": ["Linear Algebra", "Calculus"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "GoPass",
+      "isActive": true,
+      "description": "A sophisticated password management application, developed in Go for secure and efficient handling of your credentials",
+      "highlights": [
+        "Credentials",
+        "Encription",
+        "Cybersecuity",
+        "Decentralized",
+        "Golang"
+      ],
+      "url": "https://github.com/Flussen/GoPass"
+    },
+    {
+      "name": "VaultShield",
+      "isActive": true,
+      "description": "VaultShield a solution for secure credential management. Designed with passion during our devathon event, this platform aims to revolutionize the way teams manage their sensitive data.",
+      "highlights": [
+        "Credentials",
+        "Encription",
+        "Cybersecuity",
+        "Decentralized",
+        "Java",
+        "CI/CD",
+        "Docker",
+        "auto-deploy"
+      ],
+      "url": "https://github.com/VaultShield"
+    },
+    {
+      "name": "Styerr Network",
+      "description": "An infrastructure that offers a software-as-a-service for people who want to play real-life simulations of the GTA 5 video game with friends.",
+      "highlights": [
+        "GTA 5",
+        "infraestructure",
+        "microservices",
+        "Java",
+        "Golang"
+      ],
+      "url": ["https://styerr.com", "https://github.com/Styerr-Network"]
+    },
+    {
+      "name": "Flusscan",
+      "isActive": true,
+      "description": "Cybersecurity tool to ping ip, ports, using gorutines (Multi Threads)",
+      "highlights": ["Cybersecuity", "Open Source", "Golang"],
+      "url": "https://github.com/Flussen/flusscan"
+    }
+  ]
+}
