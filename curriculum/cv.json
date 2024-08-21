@@ -140,7 +140,7 @@
     {
       "name": "Dialosoft Forum",
       "isActive": true,
-      "description": "Dialosoft is a comprehensive forum solution, comparable to platforms like SMF and phpBB, but built with modern technologies to offer superior performance and ease of use",
+      "description": "Dialosoft is a comprehensive forum solution, comparable to platforms like SMF and phpBB, but built with modern technologies to offer superior performance and ease of use.",
       "highlights": [
         "Forum",
         "Software",
@@ -156,7 +156,7 @@
     {
       "name": "GoPass",
       "isActive": true,
-      "description": "A sophisticated password management desktop application, developed in Golang for secure and efficient handling of your credentials",
+      "description": "A sophisticated password management desktop application, developed in Golang for secure and efficient handling of your credentials.",
       "highlights": [
         "Credentials",
         "Encription",
