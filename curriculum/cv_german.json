@@ -1,0 +1,202 @@
+{
+  "basics": {
+    "name": "Alexander Rios",
+    "label": "Backend-Entwickler spezialisiert auf Golang und Java (Spring Boot)",
+    "image": "/me.webp",
+    "email": "contact@flussen.dev",
+    "phone": null,
+    "url": "https://flussen.dev",
+    "summary": "Backend-Entwickler spezialisiert auf Golang und Java. Ich habe alles entwickelt, von einem Passwortmanager bis hin zu Cybersicherheits-Tools und APIs, unter Verwendung von Technologien wie Spring Boot, Fiber und Gin. Meine Expertise erstreckt sich auch auf AWS und die Containerisierung mit Docker, was die Entwicklungsprojekte und die Betriebseffizienz verbessert. Leidenschaftlich in der Cybersicherheit und versiert im Bash/Shell-Scripting, verwalte ich gekonnt verschiedene Linux-Distributionen. Mein Engagement für kontinuierliches Lernen treibt mein berufliches Wachstum in der dynamischen Technologielandschaft voran.",
+    "location": {
+      "address": "",
+      "postalCode": "6462",
+      "city": "Tirol",
+      "countryCode": "AT",
+      "region": "Österreich"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "Alexander Rios",
+        "url": "https://linkedin.com/in/alexander-rios-8a03b820b/"
+      },
+      {
+        "network": "X",
+        "username": "flussen_",
+        "url": "https://x.com/flussen_"
+      },
+      {
+        "network": "GitHub",
+        "username": "flussen",
+        "url": "https://github.com/Flussen"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Conform Badmöbels",
+      "position": "CNC-Maschinenbediener",
+      "url": "https://conformbad.at/",
+      "startDate": "2019-03-01",
+      "endDate": null,
+      "summary": "Derzeit arbeite ich als CNC-Maschinenbediener. Ich habe zusammen mit dem Unternehmen gelernt und verschiedene Bereiche wie Teamarbeit, das Entwickeln guter Ideen für schnelle Lösungen und kontinuierliches Lernen in Bezug auf Effizienz kennengelernt.",
+      "highlights": ["Gründung des Unternehmens"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Internationale Universität von Valencia",
+      "url": "https://www.universidadviu.com/int/",
+      "area": "B.Sc. in Informatik",
+      "studyType": "Bachelor",
+      "startDate": "2024-01-01",
+      "endDate": null,
+      "courses": [
+        "Platzi - Golang von Anfänger bis Experte",
+        "Platzi - Java Spring Boot, Sicherheit und Bereitstellungen"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Zweiter Platz",
+      "date": "2024-04-01",
+      "awarder": "Devathon",
+      "summary": "https://programacion-es.dev/devathon-vi-edition/ als Team 1"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Golang",
+      "level": "Fortgeschritten",
+      "keywords": ["Fiber", "Gin", "Backend", "RESTful API", "Microservices"]
+    },
+    {
+      "name": "Java",
+      "level": "Mittel",
+      "keywords": [
+        "Spring Boot",
+        "JPA",
+        "Spring Security",
+        "RESTful API",
+        "Microservices",
+        "Backend"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "Fortgeschritten",
+      "keywords": ["Datenbank", "SQL", "Datenspeicherung", "Backend"]
+    },
+    {
+      "name": "Git",
+      "level": "Fortgeschritten",
+      "keywords": ["Versionskontrolle", "Zusammenarbeit", "Quellcode"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Fortgeschritten",
+      "keywords": ["Versionskontrolle", "Zusammenarbeit", "Quellcode", "Git"]
+    },
+    {
+      "name": "Linux",
+      "level": "Fortgeschritten",
+      "keywords": [
+        "Debian",
+        "Arch Linux",
+        "Ubuntu",
+        "Bereitstellung",
+        "Betriebssystem",
+        "Bash/Shell-Scripting"
+      ]
+    },
+    {
+      "name": "Docker",
+      "level": "Fortgeschritten",
+      "keywords": ["Bereitstellung", "CI/CD", "Container"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanisch",
+      "fluency": "Muttersprache"
+    },
+    {
+      "language": "Deutsch",
+      "fluency": null
+    },
+    {
+      "language": "Englisch",
+      "fluency": null
+    }
+  ],
+  "interests": [
+    {
+      "name": "Mathematik",
+      "keywords": ["Lineare Algebra", "Analysis"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Dialosoft Forum",
+      "isActive": true,
+      "description": "Dialosoft ist eine umfassende Forums-Lösung, vergleichbar mit Plattformen wie SMF und phpBB, jedoch mit modernen Technologien entwickelt, um eine bessere Leistung und Benutzerfreundlichkeit zu bieten.",
+      "highlights": [
+        "Forum",
+        "Software",
+        "Container/Docker",
+        "Java",
+        "Spring Cloud",
+        "Golang",
+        "Microservices"
+      ],
+      "url": null,
+      "github": "https://github.com/Dialosoft"
+    },
+    {
+      "name": "GoPass",
+      "isActive": true,
+      "description": "Eine anspruchsvolle Passwortverwaltung-Desktopanwendung, entwickelt in Golang für eine sichere und effiziente Handhabung deiner Anmeldeinformationen.",
+      "highlights": [
+        "Anmeldeinformationen",
+        "Verschlüsselung",
+        "Cybersicherheit",
+        "Dezentralisiert",
+        "Golang"
+      ],
+      "url": null,
+      "github": "https://github.com/Flussen/GoPass"
+    },
+    {
+      "name": "VaultShield",
+      "isActive": true,
+      "description": "VaultShield ist eine Lösung für die sichere Verwaltung von Anmeldeinformationen. Mit Leidenschaft während unseres Devathon-Events entwickelt, zielt diese Plattform darauf ab, die Art und Weise, wie Teams ihre sensiblen Daten verwalten, zu revolutionieren.",
+      "highlights": [
+        "Anmeldeinformationen",
+        "Verschlüsselung",
+        "Cybersicherheit",
+        "Dezentralisiert",
+        "Java",
+        "CI/CD",
+        "Docker",
+        "Auto-Bereitstellung"
+      ],
+      "url": null,
+      "github": "https://github.com/VaultShield"
+    },
+    {
+      "name": "Styerr Network",
+      "description": "Eine Infrastruktur, die eine Software-as-a-Service-Lösung für Personen bietet, die mit Freunden Simulationen des GTA 5-Videospiels in der realen Welt spielen möchten.",
+      "isActive": true,
+      "highlights": [
+        "GTA 5",
+        "Infrastruktur",
+        "Microservices",
+        "Java",
+        "Golang"
+      ],
+      "url": "https://styerr.com",
+      "github": "https://github.com/Styerr-Network"
+    }
+  ]
+}

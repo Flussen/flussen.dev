@@ -1,14 +1,16 @@
 {
   "basics": {
     "name": "Alexander Rios",
-    "label": "Backend Developer specialized in Golang and Java, Spring Boot",
+    "label": "Desarrollador Backend especializado en Golang y Java (Spring Boot)",
     "image": "/me.webp",
-    "email": "flussen0@gmail.com",
+    "email": "contact@flussen.dev",
+    "phone": null,
     "url": "https://flussen.dev",
-    "summary": "Junior Backend Developer specialized in Golang and Java. I have built everything from a passwordmanager to cybersecurity tools and APIs, using technologies like Spring Boot, Fiber, and Gin. My expertisealso extends to AWS and containerization with Docker, which enhance the development projects andoperational efficiency. Passionate about cybersecurity and proficient in Bash/Shell scripting, I skillfullymanage various Linux distributions. My commitment to continuous learning drives my professional growthin the dynamic tech landscape.",
+    "summary": "Desarrollador Backend especializado en Golang y Java. He creado desde un gestor de contraseñas hasta herramientas de ciberseguridad y APIs, utilizando tecnologías como Spring Boot, Fiber y Gin. Mi experiencia también se extiende a AWS y la contenedorización con Docker, lo que mejora los proyectos de desarrollo y la eficiencia operativa. Apasionado por la ciberseguridad y con dominio en scripting Bash/Shell, gestiono hábilmente varias distribuciones de Linux. Mi compromiso con el aprendizaje continuo impulsa mi crecimiento profesional en el dinámico entorno tecnológico.",
     "location": {
+      "address": "",
       "postalCode": "6462",
-      "city": "Karres, Tirol",
+      "city": "Tirol",
       "countryCode": "AT",
       "region": "Austria"
     },
@@ -33,150 +35,173 @@
   "work": [
     {
       "name": "Conform Badmöbels",
-      "position": "CnC machinery operator",
+      "position": "Operador de maquinaria CNC",
       "url": "https://conformbad.at/",
       "startDate": "2019-03-01",
       "endDate": null,
-      "summary": "Currently working as a CnC machine operator, I have learned together with the company and have learnedvarious areas such as teamwork, working on good ideas to achieve quick solutions and continuouslearning efficiency.",
-      "highlights": ["Started the company"]
+      "summary": "Actualmente trabajando como operador de máquina CNC, he aprendido junto con la empresa y he adquirido experiencia en diversas áreas, como el trabajo en equipo, el desarrollo de buenas ideas para lograr soluciones rápidas y la mejora continua de la eficiencia.",
+      "highlights": ["Inició en la empresa"]
     }
   ],
   "education": [
     {
-      "institution": "Internal University of Valencia",
+      "institution": "Universidad Internacional de Valencia",
       "url": "https://www.universidadviu.com/int/",
-      "area": "B.Sc. in Computer Engineering",
-      "studyType": "Bachelor",
+      "area": "Licenciatura en Ciencias de la Computación",
+      "studyType": "Grado",
       "startDate": "2024-01-01",
       "endDate": null,
       "courses": [
-        "Platzi - Golang from Basic to Expert",
-        "Platzi - Java Spring Boot, Security and deployments"
+        "Platzi - Golang de Básico a Experto",
+        "Platzi - Java Spring Boot, Seguridad y despliegues"
       ]
     }
   ],
   "awards": [
     {
-      "title": "Second Place",
+      "title": "Segundo Lugar",
       "date": "2024-04-01",
       "awarder": "Devathon",
-      "summary": "https://programacion-es.dev/devathon-vi-edition/ like team 1"
+      "summary": "https://programacion-es.dev/devathon-vi-edition/ como parte del equipo 1"
     }
   ],
   "skills": [
     {
       "name": "Golang",
-      "level": "Advaced",
-      "keywords": ["Fiber", "Gin", "Backend", "RESTful API", "microservices"]
+      "level": "Avanzado",
+      "keywords": ["Fiber", "Gin", "Backend", "RESTful API", "Microservicios"]
     },
     {
       "name": "Java",
-      "level": "Medium",
+      "level": "Intermedio",
       "keywords": [
-        "Spring boot",
+        "Spring Boot",
         "JPA",
         "Spring Security",
         "RESTful API",
-        "microservices",
+        "Microservicios",
         "Backend"
       ]
     },
     {
-      "name": "PostgresQL",
-      "level": "Advanced",
-      "keywords": ["Database", "SQL", "Data Storage", "Backend"]
+      "name": "PostgreSQL",
+      "level": "Avanzado",
+      "keywords": ["Base de datos", "SQL", "Almacenamiento de datos", "Backend"]
     },
     {
       "name": "Git",
-      "level": "Advanced",
-      "keywords": ["Version control", "Collaboration", "Source code"]
+      "level": "Avanzado",
+      "keywords": ["Control de versiones", "Colaboración", "Código fuente"]
     },
     {
       "name": "GitHub",
-      "level": "Advanced",
-      "keywords": ["Version control", "Collaboration", "Source code", "Git"]
+      "level": "Avanzado",
+      "keywords": [
+        "Control de versiones",
+        "Colaboración",
+        "Código fuente",
+        "Git"
+      ]
     },
     {
       "name": "Linux",
-      "level": "Advanced",
+      "level": "Avanzado",
       "keywords": [
         "Debian",
         "Arch Linux",
         "Ubuntu",
-        "Deployment",
-        "Operation System",
-        "Bash/Shell Scripting"
+        "Despliegue",
+        "Sistema Operativo",
+        "Scripting Bash/Shell"
       ]
+    },
+    {
+      "name": "Docker",
+      "level": "Avanzado",
+      "keywords": ["Despliegue", "CI/CD", "Contenedores"]
     }
   ],
   "languages": [
     {
-      "language": "Spanish",
-      "fluency": "Native speaker"
+      "language": "Español",
+      "fluency": "Nativo"
     },
     {
-      "language": "English",
-      "fluency": "Medium"
+      "language": "Alemán",
+      "fluency": null
     },
     {
-      "language": "German",
-      "fluency": "Fluent"
+      "language": "Inglés",
+      "fluency": null
     }
   ],
   "interests": [
     {
-      "name": "Maths",
-      "keywords": ["Linear Algebra", "Calculus"]
+      "name": "Matemáticas",
+      "keywords": ["Álgebra Lineal", "Cálculo"]
     }
   ],
   "projects": [
     {
+      "name": "Dialosoft Forum",
+      "isActive": true,
+      "description": "Dialosoft es una solución de foros integral, comparable a plataformas como SMF y phpBB, pero construida con tecnologías modernas para ofrecer un rendimiento superior y facilidad de uso.",
+      "highlights": [
+        "Foro",
+        "Software",
+        "Contenedores/Docker",
+        "Java",
+        "Spring Cloud",
+        "Golang",
+        "Microservicios"
+      ],
+      "url": null,
+      "github": "https://github.com/Dialosoft"
+    },
+    {
       "name": "GoPass",
       "isActive": true,
-      "description": "A sophisticated password management application, developed in Go for secure and efficient handling of your credentials",
+      "description": "Una sofisticada aplicación de escritorio para la gestión de contraseñas, desarrollada en Golang para el manejo seguro y eficiente de tus credenciales.",
       "highlights": [
-        "Credentials",
-        "Encription",
-        "Cybersecuity",
-        "Decentralized",
+        "Credenciales",
+        "Encriptación",
+        "Ciberseguridad",
+        "Descentralizado",
         "Golang"
       ],
-      "url": "https://github.com/Flussen/GoPass"
+      "url": null,
+      "github": "https://github.com/Flussen/GoPass"
     },
     {
       "name": "VaultShield",
       "isActive": true,
-      "description": "VaultShield a solution for secure credential management. Designed with passion during our devathon event, this platform aims to revolutionize the way teams manage their sensitive data.",
+      "description": "VaultShield es una solución para la gestión segura de credenciales. Diseñado con pasión durante nuestro evento de Devathon, esta plataforma tiene como objetivo revolucionar la forma en que los equipos gestionan sus datos sensibles.",
       "highlights": [
-        "Credentials",
-        "Encription",
-        "Cybersecuity",
-        "Decentralized",
+        "Credenciales",
+        "Encriptación",
+        "Ciberseguridad",
+        "Descentralizado",
         "Java",
         "CI/CD",
         "Docker",
-        "auto-deploy"
+        "Despliegue automático"
       ],
-      "url": "https://github.com/VaultShield"
+      "url": null,
+      "github": "https://github.com/VaultShield"
     },
     {
       "name": "Styerr Network",
-      "description": "An infrastructure that offers a software-as-a-service for people who want to play real-life simulations of the GTA 5 video game with friends.",
+      "description": "Una infraestructura que ofrece software como servicio para personas que quieren realizar simulaciones de la vida real del videojuego GTA 5 con amigos.",
+      "isActive": true,
       "highlights": [
         "GTA 5",
-        "infraestructure",
-        "microservices",
+        "Infraestructura",
+        "Microservicios",
         "Java",
         "Golang"
       ],
-      "url": ["https://styerr.com", "https://github.com/Styerr-Network"]
-    },
-    {
-      "name": "Flusscan",
-      "isActive": true,
-      "description": "Cybersecurity tool to ping ip, ports, using gorutines (Multi Threads)",
-      "highlights": ["Cybersecuity", "Open Source", "Golang"],
-      "url": "https://github.com/Flussen/flusscan"
+      "url": "https://styerr.com",
+      "github": "https://github.com/Styerr-Network"
     }
   ]
 }

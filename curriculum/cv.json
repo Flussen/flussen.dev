@@ -119,15 +119,15 @@
   "languages": [
     {
       "language": "Spanish",
-      "fluency": "Native speaker"
+      "fluency": "Native Speaker"
     },
     {
       "language": "German",
-      "fluency": "Fluent"
+      "fluency": null
     },
     {
       "language": "English",
-      "fluency": "Medium"
+      "fluency": null
     }
   ],
   "interests": [
@@ -138,9 +138,25 @@
   ],
   "projects": [
     {
+      "name": "Dialosoft Forum",
+      "isActive": true,
+      "description": "Dialosoft is a comprehensive forum solution, comparable to platforms like SMF and phpBB, but built with modern technologies to offer superior performance and ease of use",
+      "highlights": [
+        "Forum",
+        "Software",
+        "Containers/Docker",
+        "Java",
+        "Spring Cloud",
+        "Golang",
+        "Microservices"
+      ],
+      "url": null,
+      "github": "https://github.com/Dialosoft"
+    },
+    {
       "name": "GoPass",
       "isActive": true,
-      "description": "A sophisticated password management application, developed in Go for secure and efficient handling of your credentials",
+      "description": "A sophisticated password management desktop application, developed in Golang for secure and efficient handling of your credentials",
       "highlights": [
         "Credentials",
         "Encription",
@@ -181,14 +197,6 @@
       ],
       "url": "https://styerr.com",
       "github": "https://github.com/Styerr-Network"
-    },
-    {
-      "name": "Flusscan",
-      "isActive": true,
-      "description": "Cybersecurity tool to ping ip, ports, using gorutines (Multi Threads)",
-      "highlights": ["Cybersecuity", "Open Source", "Golang"],
-      "url": null,
-        "github": "https://github.com/Flussen/flusscan"
     }
   ]
 }
