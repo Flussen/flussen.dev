@@ -5,7 +5,7 @@ let modInfo;
 if (import.meta.env.BUILD_FETCH !== "false") {
   // Only run fetch when not in the build environment
   try {
-    const response = await fetch("http://localhost:8080/api/mod-info");
+    const response = await fetch("/api/mod-info");
     modInfo = await response.json();
   } catch (error) {
     console.error("Fetch failed:", error);
