@@ -21,6 +21,8 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
+      env:
+        BUILD_FETCH: 'false' # Set to 'false' to disable fetching during build
       run: |
         cd curriculum
         npm install -g pnpm
