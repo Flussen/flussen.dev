@@ -1,0 +1,87 @@
+---
+// ModBanner.astro
+// Fetch mod information from the backend
+const response = await fetch("http://localhost:8080/api/mod-info");
+const modInfo = await response.json();
+---
+
+<section class="mod-banner">
+  <div class="mod-banner-content">
+    <img src={modInfo.preview_url} alt="Mod preview" class="mod-image" />
+    <div class="mod-stats">
+      <p><strong>Subscribed:</strong> {modInfo.subscriptions}</p>
+      <p><strong>Favorites:</strong> {modInfo.favorited}</p>
+      <p><strong>Views:</strong> {modInfo.views}</p>
+    </div>
+  </div>
+  <a
+    href={`https://steamcommunity.com/sharedfiles/filedetails/?id=${modInfo.publishedfileid}`}
+    target="_blank"
+    class="mod-link"
+  >
+    View on Steam
+  </a>
+</section>
+
+<style>
+  .mod-banner {
+    background: #f5f5f5; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; 
+    max-width: 725px; 
+    text-align: center; 
+  }
+
+  .mod-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mod-image {
+    max-width: 150px; /* Small image size */
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+    border: 1px solid #000;
+  }
+
+  .mod-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mod-stats p {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+
+  .mod-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #0078d4;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  .mod-link:hover {
+    background-color: #005a9e;
+  }
+
+  /* Media queries for responsiveness */
+  @media (max-width: 600px) {
+    .mod-banner-content {
+      flex-direction: column;
+    }
+
+    .mod-image {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+</style>

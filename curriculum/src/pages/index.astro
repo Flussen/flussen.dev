@@ -9,6 +9,7 @@ import Projects from "@/components/sections/Projects.astro";
 import Skills from "@/components/sections/Skills.astro";
 import KeyboardManager from "@/components/KeyboardManager.astro";
 import Languages from "@/components/sections/Languages.astro";
+import ModBanner from "@/components/sections/ModBanner.astro"
 
 import { basics } from "@cv";
 const { name, label } = basics;
@@ -17,12 +18,13 @@ const { name, label } = basics;
 <Layout title={`${name}'s portfolio - ${label}`}>
   <main>
     <Hero />
+    <Skills />
     <About />
     <Languages />
     <Experience />
     <Education />
     <Projects />
-    <Skills />
+    <ModBanner />
 
     <KeyboardManager />
   </main>
