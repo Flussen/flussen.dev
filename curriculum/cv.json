@@ -179,7 +179,7 @@
         "Java",
         "CI/CD",
         "Docker",
-        "auto-deploy"
+        "Auto-deploy"
       ],
       "url": null,
       "github": "https://github.com/VaultShield"
@@ -189,9 +189,9 @@
       "description": "An infrastructure that offers a software-as-a-service for people who want to play real-life simulations of the GTA 5 video game with friends.",
       "isActive": true,
       "highlights": [
-        "GTA 5",
-        "infraestructure",
-        "microservices",
+        "Games",
+        "Infraestructure",
+        "Microservices",
         "Java",
         "Golang"
       ],

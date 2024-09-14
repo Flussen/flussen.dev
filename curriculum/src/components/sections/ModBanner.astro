@@ -1,115 +1,243 @@
 ---
-let modInfo;
+import { Image } from "astro:assets";
 
-// Check if we're in a build environment (GitHub Actions or other CI)
-if (import.meta.env.BUILD_FETCH !== "false") {
-  // Only run fetch when not in the build environment
-  try {
-    const response = await fetch("https://flussen.dev/api/mod-info");
-    modInfo = await response.json();
-  } catch (error) {
-    console.error("Fetch failed:", error);
-    modInfo = {}; // Provide fallback data to prevent build failure
+let defaultModInfo = {
+  preview_url: "/placeholder.svg?height=300&width=300",
+  title: "Mod Title",
+  subscriptions: "N/A",
+  favorited: "N/A",
+  views: "N/A",
+  publishedfileid: "",
+  description: "Description not available.",
+};
+
+let modInfo = { ...defaultModInfo };
+
+try {
+  const response = await fetch("https://flussen.dev/api/mod-info");
+  if (response.ok) {
+    const data = await response.json();
+    modInfo = { ...modInfo, ...data };
+  } else {
+    console.error("Error fetching data:", response.statusText);
   }
-} else {
-  // Use fallback data during build
-  modInfo = {
-    preview_url: "", // Provide a placeholder or empty string
-    subscriptions: "N/A",
-    favorited: "N/A",
-    views: "N/A",
-    publishedfileid: "",
-  };
+} catch (error) {
+  console.error("Error fetching data:", error);
 }
 ---
 
-<section class="mod-banner">
-  {
-    modInfo.preview_url && (
-      <div class="mod-banner-content">
-        <img src={modInfo.preview_url} alt="Mod preview" class="mod-image" />
-        <div class="mod-stats">
-          <p>
-            <strong>Subscribed:</strong> {modInfo.subscriptions}
-          </p>
-          <p>
-            <strong>Favorites:</strong> {modInfo.favorited}
-          </p>
-          <p>
-            <strong>Views:</strong> {modInfo.views}
-          </p>
+<section class="steam-workshop">
+  <h2 class="section-title">External Projects</h2>
+  <div class="mod-container">
+    <a
+      href={`https://steamcommunity.com/sharedfiles/filedetails/?id=${modInfo.publishedfileid}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mod-card"
+      title={`View ${modInfo.title} on Steam`}
+    >
+      <div class="mod-image-container">
+        <Image
+          src={modInfo.preview_url}
+          alt={`Preview of ${modInfo.title}`}
+          width={300}
+          height={300}
+          class="mod-image"
+        />
+        <div class="steam-overlay">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="steam-icon"
+          >
+            <path
+              d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"
+            ></path>
+          </svg>
+          <span>View on Steam</span>
         </div>
       </div>
-    )
-  }
-  <a
-    href={`https://steamcommunity.com/sharedfiles/filedetails/?id=${modInfo.publishedfileid}`}
-    target="_blank"
-    class="mod-link"
-  >
-    View on Steam
-  </a>
+      <div class="mod-content">
+        <h3 class="mod-title">{modInfo.title}</h3>
+        <div class="mod-stats">
+          <span class="stat-item" title="Subscriptions">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon"
+              ><path
+                d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z"
+              ></path></svg
+            >
+            {modInfo.subscriptions}
+          </span>
+          <span class="stat-item" title="Favorites">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon"
+              ><path
+                fill-rule="evenodd"
+                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                clip-rule="evenodd"></path></svg
+            >
+            {modInfo.favorited}
+          </span>
+          <span class="stat-item" title="Views">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="icon"
+              ><path d="M12 15a3 3 0 100-6 3 3 0 000 6z"></path><path
+                fill-rule="evenodd"
+                d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z"
+                clip-rule="evenodd"></path></svg
+            >
+            {modInfo.views}
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
 </section>
 
 <style>
-  .mod-banner {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 725px;
-    text-align: center;
+  .steam-workshop {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
   }
 
-  .mod-banner-content {
+  .section-title {
+    font-size: 1.5rem;
+    color: #000;
+    text-align: left;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    padding-left: 1rem;
+  }
+
+  .mod-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 1rem;
+  }
+
+  .mod-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    max-width: 300px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .mod-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .mod-image-container {
+    position: relative;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    overflow: hidden;
   }
 
   .mod-image {
-    max-width: 150px; /* Small image size */
-    height: auto;
-    margin-right: 20px;
-    border-radius: 8px;
-    border: 1px solid #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .mod-card:hover .mod-image {
+    transform: scale(1.05);
+  }
+
+  .steam-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #ffffff;
+  }
+
+  .mod-card:hover .steam-overlay {
+    opacity: 1;
+  }
+
+  .steam-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.5rem;
+  }
+
+  .mod-content {
+    padding: 1rem;
+  }
+
+  .mod-title {
+    font-size: 1.25rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .mod-stats {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #7f8c8d;
   }
 
-  .mod-stats p {
-    margin: 5px 0;
-    font-size: 1rem;
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
   }
 
-  .mod-link {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #0078d4;
-    color: white;
-    border-radius: 4px;
-    text-decoration: none;
+  .icon {
+    width: 1rem;
+    height: 1rem;
   }
 
-  .mod-link:hover {
-    background-color: #005a9e;
-  }
-
-  /* Media queries for responsiveness */
   @media (max-width: 600px) {
-    .mod-banner-content {
-      flex-direction: column;
+    .steam-workshop {
+      padding: 1rem;
     }
 
-    .mod-image {
-      margin-right: 0;
-      margin-bottom: 10px;
+    .section-title {
+      font-size: 1.5rem;
+      padding-left: 0.5rem;
+    }
+
+    .mod-container {
+      padding-left: 0.5rem;
+    }
+
+    .mod-card {
+      max-width: 250px;
     }
   }
 </style>
