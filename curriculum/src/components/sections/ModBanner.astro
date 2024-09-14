@@ -1,19 +1,47 @@
 ---
-// ModBanner.astro
-// Fetch mod information from the backend
-const response = await fetch("http://localhost:8080/api/mod-info");
-const modInfo = await response.json();
+let modInfo;
+
+// Check if we're in a build environment (GitHub Actions or other CI)
+if (import.meta.env.BUILD_FETCH !== "false") {
+  // Only run fetch when not in the build environment
+  try {
+    const response = await fetch("http://localhost:8080/api/mod-info");
+    modInfo = await response.json();
+  } catch (error) {
+    console.error("Fetch failed:", error);
+    modInfo = {}; // Provide fallback data to prevent build failure
+  }
+} else {
+  // Use fallback data during build
+  modInfo = {
+    preview_url: "", // Provide a placeholder or empty string
+    subscriptions: "N/A",
+    favorited: "N/A",
+    views: "N/A",
+    publishedfileid: "",
+  };
+}
 ---
 
 <section class="mod-banner">
-  <div class="mod-banner-content">
-    <img src={modInfo.preview_url} alt="Mod preview" class="mod-image" />
-    <div class="mod-stats">
-      <p><strong>Subscribed:</strong> {modInfo.subscriptions}</p>
-      <p><strong>Favorites:</strong> {modInfo.favorited}</p>
-      <p><strong>Views:</strong> {modInfo.views}</p>
-    </div>
-  </div>
+  {
+    modInfo.preview_url && (
+      <div class="mod-banner-content">
+        <img src={modInfo.preview_url} alt="Mod preview" class="mod-image" />
+        <div class="mod-stats">
+          <p>
+            <strong>Subscribed:</strong> {modInfo.subscriptions}
+          </p>
+          <p>
+            <strong>Favorites:</strong> {modInfo.favorited}
+          </p>
+          <p>
+            <strong>Views:</strong> {modInfo.views}
+          </p>
+        </div>
+      </div>
+    )
+  }
   <a
     href={`https://steamcommunity.com/sharedfiles/filedetails/?id=${modInfo.publishedfileid}`}
     target="_blank"
@@ -25,13 +53,13 @@ const modInfo = await response.json();
 
 <style>
   .mod-banner {
-    background: #f5f5f5; 
+    background: #f5f5f5;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px auto; 
-    max-width: 725px; 
-    text-align: center; 
+    margin: 20px auto;
+    max-width: 725px;
+    text-align: center;
   }
 
   .mod-banner-content {
