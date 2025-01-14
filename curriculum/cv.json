@@ -154,6 +154,20 @@
       "github": "https://github.com/Dialosoft"
     },
     {
+      "name": "Newcore Network",
+      "description": "An infrastructure that offers a software-as-a-service for people who want to play real-life simulations of the GTA 5 video game with friends.  Right now is under development! newcore.gg",
+      "isActive": true,
+      "highlights": [
+        "Games",
+        "Infraestructure",
+        "Microservices",
+        "Java",
+        "Golang"
+      ],
+      "url": "https://newcore.gg",
+      "github": "https://github.com/newcore-network"
+    },
+    {
       "name": "GoPass",
       "isActive": true,
       "description": "A sophisticated password management desktop application, developed in Golang for secure and efficient handling of your credentials.",
@@ -183,20 +197,6 @@
       ],
       "url": null,
       "github": "https://github.com/VaultShield"
-    },
-    {
-      "name": "Styerr Network",
-      "description": "An infrastructure that offers a software-as-a-service for people who want to play real-life simulations of the GTA 5 video game with friends.",
-      "isActive": true,
-      "highlights": [
-        "Games",
-        "Infraestructure",
-        "Microservices",
-        "Java",
-        "Golang"
-      ],
-      "url": "https://styerr.com",
-      "github": "https://github.com/Styerr-Network"
     }
   ]
 }
