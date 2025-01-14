@@ -197,6 +197,30 @@
       ],
       "url": null,
       "github": "https://github.com/VaultShield"
+    },
+    {
+      "name": "Swagger for Fiber v3 - Golang Library",
+      "isActive": true,
+      "description": "fiber v3 middleware to automatically generate RESTful API documentation with Swagger",
+      "highlights": ["Fiber", "Golang", "Library", "Swagger", "Docs"],
+      "url": null,
+      "github": "https://github.com/Flussen/swagger-fiber-v3"
+    },
+    {
+      "name": "Newcore Standard Libraries - Golang Library",
+      "isActive": true,
+      "description": "A comprehensive suite of reusable components designed for seamless integration across all Newcore repositories and services. These libraries offer robust functionality, streamline development, and promote consistency throughout projects.",
+      "highlights": [
+        "Fiber",
+        "Golang",
+        "Library",
+        "Utility",
+        "Databases",
+        "Drivers",
+        "Abstractions"
+      ],
+      "url": null,
+      "github": "https://github.com/newcore-network/go-stdlib"
     }
   ]
 }
