@@ -12,11 +12,12 @@ import Languages from "@/components/sections/Languages.astro";
 import ModBanner from "@/components/sections/ModBanner.astro"
 
 import { basics } from "@cv";
+import "@/styles/global.css";
 const { name, label } = basics;
 ---
 
 <Layout title={`${name}'s portfolio - ${label}`}>
-  <main>
+  <main class="w-full mx-auto px-8 py-16 md:px-16 bg-red-500 text-white">
     <Hero />
     <Skills />
     <About />
@@ -25,21 +26,6 @@ const { name, label } = basics;
     <Education />
     <Projects />
     <ModBanner />
-
     <KeyboardManager />
   </main>
-
-  <style>
-    main {
-      padding: 4rem;
-      margin: auto;
-      width: 100%;
-    }
-
-    @media (width <= 700px) {
-      main {
-        padding: 2rem;
-      }
-    }
-  </style>
 </Layout>
