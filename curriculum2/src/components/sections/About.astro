@@ -1,0 +1,11 @@
+---
+import AboutMeCode from "../AboutMeCode"
+import Section from "../Section.astro"
+import { basics } from "@cv"
+
+const { summary } = basics
+---
+
+<Section title="About me">
+  <AboutMeCode summary={summary} client:load />
+</Section>

@@ -1,0 +1,226 @@
+{
+  "basics": {
+    "name": "Alexander Rios",
+    "label": "Backend Developer specialized in Golang and Java (Spring Boot)",
+    "image": "/me.png",
+    "email": "flussen0@gmail.com",
+    "phone": null,
+    "url": "https://flussen.dev",
+    "summary": "Backend Developer specialized in Golang and Java. I have built everything from a password manager to cybersecurity tools and APIs, using technologies like Spring Boot, Fiber, and Gin. My expertise also extends to AWS and containerization with Docker, which enhance the development projects and operational efficiency. Passionate about cybersecurity and proficient in Bash/Shell scripting, I skillfully manage various Linux distributions. My commitment to continuous learning drives my professional growthin the dynamic tech landscape.",
+    "location": {
+      "address": "",
+      "postalCode": "6462",
+      "region": "Tyrol",
+      "countryCode": "AT",
+      "country": "Austria"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "Alexander Rios",
+        "url": "https://linkedin.com/in/alexander-rios-8a03b820b/"
+      },
+      {
+        "network": "X",
+        "username": "flussen_",
+        "url": "https://x.com/flussen_"
+      },
+      {
+        "network": "GitHub",
+        "username": "flussen",
+        "url": "https://github.com/Flussen"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Conform Badmöbels",
+      "position": "CnC machinery operator",
+      "url": "https://conformbad.at/",
+      "startDate": "2019-03-01",
+      "endDate": null,
+      "summary": "Currently working as a CnC machine operator, I have learned together with the company and have learned various areas such as team work, working on good ideas to achieve quick solutions and continuous learning efficiency.",
+      "highlights": ["Started the company"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "International University of Valencia",
+      "url": "https://www.universidadviu.com/int/",
+      "area": "B.Sc. in Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "2024-01-01",
+      "endDate": null,
+      "courses": [
+        "Platzi - Golang from Basic to Expert",
+        "Platzi - Java Spring Boot, Security and deployments"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Second Place",
+      "date": "2024-04-01",
+      "awarder": "Devathon",
+      "summary": "https://programacion-es.dev/devathon-vi-edition/ like team 1"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Golang",
+      "level": "Advaced",
+      "keywords": ["Fiber", "Gin", "Backend", "RESTful API", "microservices"]
+    },
+    {
+      "name": "Java",
+      "level": "Medium",
+      "keywords": [
+        "Spring boot",
+        "JPA",
+        "Spring Security",
+        "RESTful API",
+        "microservices",
+        "Backend"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "Advanced",
+      "keywords": ["Database", "SQL", "Data Storage", "Backend"]
+    },
+    {
+      "name": "Git",
+      "level": "Advanced",
+      "keywords": ["Version control", "Collaboration", "Source code"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Advanced",
+      "keywords": ["Version control", "Collaboration", "Source code", "Git"]
+    },
+    {
+      "name": "Linux",
+      "level": "Advanced",
+      "keywords": [
+        "Debian",
+        "Arch Linux",
+        "Ubuntu",
+        "Deployment",
+        "Operation System",
+        "Bash/Shell Scripting"
+      ]
+    },
+    {
+      "name": "Docker",
+      "level": "Advanced",
+      "keywords": ["Deployment", "CI/CD", "Containers"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native Speaker"
+    },
+    {
+      "language": "German",
+      "fluency": null
+    },
+    {
+      "language": "English",
+      "fluency": null
+    }
+  ],
+  "interests": [
+    {
+      "name": "Maths",
+      "keywords": ["Linear Algebra", "Calculus"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Dialosoft Forum",
+      "isActive": true,
+      "description": "Dialosoft is a comprehensive forum solution, comparable to platforms like SMF and phpBB, but built with modern technologies to offer superior performance and ease of use.",
+      "highlights": [
+        "Forum",
+        "Software",
+        "Containers/Docker",
+        "Java",
+        "Spring Cloud",
+        "Golang",
+        "Microservices"
+      ],
+      "url": null,
+      "github": "https://github.com/Dialosoft"
+    },
+    {
+      "name": "Newcore Network",
+      "description": "An infrastructure that offers a software-as-a-service for people who want to play real-life simulations of the GTA 5 video game with friends.  Right now is under development! newcore.gg",
+      "isActive": true,
+      "highlights": [
+        "Games",
+        "Infraestructure",
+        "Microservices",
+        "Java",
+        "Golang"
+      ],
+      "url": "https://newcore.gg",
+      "github": "https://github.com/newcore-network"
+    },
+    {
+      "name": "GoPass",
+      "isActive": true,
+      "description": "A sophisticated password management desktop application, developed in Golang for secure and efficient handling of your credentials.",
+      "highlights": [
+        "Credentials",
+        "Encription",
+        "Cybersecuity",
+        "Decentralized",
+        "Golang"
+      ],
+      "url": null,
+      "github": "https://github.com/Flussen/GoPass"
+    },
+    {
+      "name": "VaultShield",
+      "isActive": true,
+      "description": "VaultShield a solution for secure credential management. Designed with passion during our devathon event, this platform aims to revolutionize the way teams manage their sensitive data.",
+      "highlights": [
+        "Credentials",
+        "Encription",
+        "Cybersecuity",
+        "Decentralized",
+        "Java",
+        "CI/CD",
+        "Docker",
+        "Auto-deploy"
+      ],
+      "url": null,
+      "github": "https://github.com/VaultShield"
+    },
+    {
+      "name": "Swagger for Fiber v3 - Golang Library",
+      "isActive": true,
+      "description": "fiber v3 middleware to automatically generate RESTful API documentation with Swagger",
+      "highlights": ["Fiber", "Golang", "Library", "Swagger", "Docs"],
+      "url": null,
+      "github": "https://github.com/Flussen/swagger-fiber-v3"
+    },
+    {
+      "name": "Newcore Standard Libraries - Golang Library",
+      "isActive": true,
+      "description": "A comprehensive suite of reusable components designed for seamless integration across all Newcore repositories and services. These libraries offer robust functionality, streamline development, and promote consistency throughout projects.",
+      "highlights": [
+        "Fiber",
+        "Golang",
+        "Library",
+        "Utility",
+        "Databases",
+        "Drivers",
+        "Abstractions"
+      ],
+      "url": null,
+      "github": "https://github.com/newcore-network/go-stdlib"
+    }
+  ]
+}
