@@ -1,11 +1,17 @@
 ---
 import AboutMeCode from "../AboutMeCode"
 import Section from "../Section.astro"
-import { basics } from "@cv"
+import { getTranslation, type Locale } from "@/lib/i18n";
 
-const { summary } = basics
+interface Props {
+  cvData: any;
+  locale: Locale;
+}
+
+const { cvData, locale } = Astro.props;
+const { summary } = cvData.basics;
 ---
 
-<Section title="About me">
+<Section title={getTranslation(locale, "About me")}>
   <AboutMeCode summary={summary} client:load />
 </Section>

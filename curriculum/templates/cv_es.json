@@ -1,0 +1,280 @@
+{
+  "basics": {
+    "name": "Alexander Rios",
+    "label": "Desarrollador Backend especializado en Golang y Java (Spring Boot)",
+    "image": "/me.png",
+    "email": "flussen0@gmail.com",
+    "phone": null,
+    "url": "https://flussen.dev",
+    "summary": "Desarrollador Backend especializado en Golang y Java, con experiencia también en TypeScript, enfocado en la construcción de APIs escalables, servicios conscientes de la seguridad y sistemas backend distribuidos. He desarrollado sistemas de autenticación, herramientas para desarrolladores y servicios a nivel de infraestructura utilizando Spring Boot, Fiber, Gin, PostgreSQL y Redis, con el apoyo de Docker, pipelines de CI/CD y entornos basados en Linux. Combino arquitectura de software, automatización y diseño orientado a la seguridad para construir plataformas backend fiables y mantenibles.",
+    "location": {
+      "address": "",
+      "postalCode": "6462",
+      "region": "Tirol",
+      "countryCode": "AT",
+      "country": "Austria"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "Alexander Rios",
+        "url": "https://linkedin.com/in/alexander-rios-8a03b820b/"
+      },
+      {
+        "network": "X",
+        "username": "flussen_",
+        "url": "https://x.com/flussen_"
+      },
+      {
+        "network": "GitHub",
+        "username": "flussen",
+        "url": "https://github.com/Flussen"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Conform Badmöbels",
+      "position": "Operador de Maquinaria CNC",
+      "url": "https://conformbad.at/",
+      "startDate": "2019-03-01",
+      "endDate": null,
+      "summary": "Actualmente trabajando como operador de máquinas CNC y programando la CNC, he crecido junto con la empresa y desarrollado experiencia en diversas áreas como trabajo en equipo, resolución de problemas para lograr soluciones rápidas y mejora continua de la eficiencia operativa.",
+      "highlights": [
+        "Operación y mantenimiento de maquinaria CNC para fabricación de precisión",
+        "Colaboración con miembros del equipo para optimizar flujos de trabajo de producción",
+        "Implementación de mejoras de procesos para aumentar la eficiencia"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidad Internacional de Valencia",
+      "url": "https://www.universidadviu.com/int/",
+      "area": "Grado en Ingeniería Informática",
+      "studyType": "Grado",
+      "startDate": "2024-01-01",
+      "endDate": null,
+      "score": 9.5
+    }
+  ],
+  "awards": [
+    {
+      "title": "Segundo Lugar - Devathon VI",
+      "date": "2024-04-01",
+      "awarder": "Devathon",
+      "summary": "Logré el segundo lugar como parte del equipo en la VI edición de Devathon, un evento de programación competitiva enfocado en soluciones de software innovadoras."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Golang",
+      "level": "Avanzado",
+      "keywords": [
+        "Fiber",
+        "Gin",
+        "Backend",
+        "RESTful API",
+        "Microservicios"
+      ]
+    },
+    {
+      "name": "Java",
+      "level": "Intermedio",
+      "keywords": [
+        "Spring Boot",
+        "JPA",
+        "Spring Security",
+        "RESTful API",
+        "Microservicios",
+        "Backend"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "Avanzado",
+      "keywords": [
+        "Base de Datos",
+        "SQL",
+        "Almacenamiento de Datos",
+        "Backend"
+      ]
+    },
+    {
+      "name": "Git",
+      "level": "Avanzado",
+      "keywords": [
+        "Control de Versiones",
+        "Colaboración",
+        "Código Fuente"
+      ]
+    },
+    {
+      "name": "GitHub",
+      "level": "Avanzado",
+      "keywords": [
+        "Control de Versiones",
+        "Colaboración",
+        "Código Fuente",
+        "Git"
+      ]
+    },
+    {
+      "name": "Linux",
+      "level": "Avanzado",
+      "keywords": [
+        "Debian",
+        "Arch Linux",
+        "Ubuntu",
+        "Despliegue",
+        "Sistema Operativo",
+        "Bash/Shell Scripting"
+      ]
+    },
+    {
+      "name": "Docker",
+      "level": "Avanzado",
+      "keywords": [
+        "Despliegue",
+        "CI/CD",
+        "Contenedores"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Español",
+      "fluency": "Nativo"
+    },
+    {
+      "language": "Alemán",
+      "fluency": "Intermedio"
+    },
+    {
+      "language": "Inglés",
+      "fluency": "Competencia Profesional"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Matemáticas",
+      "keywords": [
+        "Álgebra Lineal",
+        "Cálculo"
+      ]
+    },
+    {
+      "name": "Ciberseguridad",
+      "keywords": [
+        "Investigación de Seguridad",
+        "Encriptación",
+        "Mejores Prácticas"
+      ]
+    },
+    {
+      "name": "Código Abierto",
+      "keywords": [
+        "Contribución",
+        "Desarrollo de Librerías",
+        "Comunidad"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "OpenCore",
+      "isActive": true,
+      "description": "Un runtime y framework backend multijugador 'TypeScript-first' para FiveM, diseñado en torno a la inyección de dependencias, tipado estricto, arquitectura orientada a eventos y recursos modulares. OpenCore proporciona una base de ingeniería para construir servidores de juegos escalables y servicios en línea.",
+      "highlights": [
+        "TypeScript",
+        "Runtime",
+        "Framework",
+        "FiveM",
+        "Inyección de Dependencias",
+        "Eventos",
+        "Validación",
+        "Backend"
+      ],
+      "url": "https://opencorejs.dev",
+      "github": "https://github.com/newcore-network/opencore"
+    },
+    {
+      "name": "OpenCore CLI",
+      "isActive": true,
+      "description": "Herramienta de línea de comandos para scaffolding, construcción, validación y empaquetado de recursos de OpenCore. Proporciona inicialización de proyectos, pipelines de construcción, ayudantes de despliegue y automatización para desarrolladores de servidores FiveM.",
+      "highlights": [
+        "CLI",
+        "Herramientas de Desarrollador",
+        "TypeScript",
+        "Sistema de Construcción",
+        "FiveM",
+        "Automatización"
+      ],
+      "url": "https://opencorejs.dev",
+      "github": "https://github.com/newcore-network/opencore-cli"
+    },
+    {
+      "name": "OpenCore Identity",
+      "isActive": true,
+      "description": "Servicio de autenticación e identidad para OpenCore, que proporciona gestión de cuentas, roles, permisos y manejo de sesiones mediante una arquitectura basada en API y base de datos.",
+      "highlights": [
+        "Autenticación",
+        "Autorización",
+        "RBAC",
+        "PostgreSQL",
+        "TypeScript",
+        "API",
+        "Seguridad"
+      ],
+      "url": "https://opencorejs.dev",
+      "github": "https://github.com/newcore-network/opencore-identity"
+    },
+    {
+      "name": "Swagger for Fiber v3",
+      "isActive": true,
+      "description": "Middleware de Swagger para Fiber v3 que expone automáticamente la documentación de la API RESTful para backends en Golang, soportando flujos de trabajo modernos de OpenAPI.",
+      "highlights": [
+        "Golang",
+        "Fiber",
+        "Swagger",
+        "OpenAPI",
+        "Backend",
+        "Librería"
+      ],
+      "url": null,
+      "github": "https://github.com/Flussen/swagger-fiber-v3"
+    },
+    {
+      "name": "GoPass",
+      "isActive": false,
+      "description": "Un gestor de contraseñas seguro y 'offline-first' escrito en Golang, enfocado en una encriptación fuerte, bóvedas locales y una superficie de ataque mínima.",
+      "highlights": [
+        "Golang",
+        "Ciberseguridad",
+        "Encriptación",
+        "Gestor de Contraseñas",
+        "Escritorio",
+        "Seguridad"
+      ],
+      "url": null,
+      "github": "https://github.com/Flussen/GoPass"
+    },
+    {
+      "name": "VaultShield",
+      "isActive": false,
+      "description": "VaultShield es una solución para la gestión segura de credenciales. Diseñada con pasión durante nuestro evento devathon, esta plataforma tiene como objetivo revolucionar la forma en que los equipos gestionan sus datos sensibles.",
+      "highlights": [
+        "Credenciales",
+        "Encriptación",
+        "Ciberseguridad",
+        "Descentralizado",
+        "Java",
+        "CI/CD",
+        "Docker",
+        "Auto-despliegue"
+      ],
+      "url": null,
+      "github": "https://github.com/VaultShield"
+    }
+  ]
+}

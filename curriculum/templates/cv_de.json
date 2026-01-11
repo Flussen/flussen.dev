@@ -1,0 +1,280 @@
+{
+  "basics": {
+    "name": "Alexander Rios",
+    "label": "Backend-Entwickler spezialisiert auf Golang und Java (Spring Boot)",
+    "image": "/me.png",
+    "email": "flussen0@gmail.com",
+    "phone": null,
+    "url": "https://flussen.dev",
+    "summary": "Backend-Entwickler spezialisiert auf Golang und Java, mit Erfahrung auch in TypeScript, konzentriert auf den Aufbau skalierbarer APIs, sicherheitsbewusster Dienste und verteilter Backend-Systeme. Ich habe Authentifizierungssysteme, Entwickler-Tools und Dienste auf Infrastrukturebene mit Spring Boot, Fiber, Gin, PostgreSQL und Redis entwickelt, unterstützt durch Docker, CI/CD-Pipelines und Linux-basierte Umgebungen. Ich kombiniere Softwarearchitektur, Automatisierung und sicherheitsorientiertes Design, um zuverlässige und wartbare Backend-Plattformen zu erstellen.",
+    "location": {
+      "address": "",
+      "postalCode": "6462",
+      "region": "Tirol",
+      "countryCode": "AT",
+      "country": "Österreich"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "Alexander Rios",
+        "url": "https://linkedin.com/in/alexander-rios-8a03b820b/"
+      },
+      {
+        "network": "X",
+        "username": "flussen_",
+        "url": "https://x.com/flussen_"
+      },
+      {
+        "network": "GitHub",
+        "username": "flussen",
+        "url": "https://github.com/Flussen"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Conform Badmöbels",
+      "position": "CNC-Maschinenbediener",
+      "url": "https://conformbad.at/",
+      "startDate": "2019-03-01",
+      "endDate": null,
+      "summary": "Derzeit als CNC-Maschinenbediener und Programmierer tätig, bin ich gemeinsam mit dem Unternehmen gewachsen und habe Expertise in verschiedenen Bereichen wie Teamarbeit, Problemlösung zur Erzielung schneller Lösungen und kontinuierliche Verbesserung der operativen Effizienz entwickelt.",
+      "highlights": [
+        "Bedienung und Wartung von CNC-Maschinen für Präzisionsfertigung",
+        "Zusammenarbeit mit Teammitgliedern zur Optimierung von Produktionsabläufen",
+        "Implementierung von Prozessverbesserungen zur Effizienzsteigerung"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Internationale Universität Valencia",
+      "url": "https://www.universidadviu.com/int/",
+      "area": "B.Sc. Informatik",
+      "studyType": "Bachelor",
+      "startDate": "2024-01-01",
+      "endDate": null,
+      "score": 9.5
+    }
+  ],
+  "awards": [
+    {
+      "title": "Zweiter Platz - Devathon VI",
+      "date": "2024-04-01",
+      "awarder": "Devathon",
+      "summary": "Erreichte den zweiten Platz als Teil eines Teams bei der VI. Ausgabe von Devathon, einem kompetitiven Programmierwettbewerb mit Fokus auf innovative Softwarelösungen."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Golang",
+      "level": "Fortgeschritten",
+      "keywords": [
+        "Fiber",
+        "Gin",
+        "Backend",
+        "RESTful API",
+        "Microservices"
+      ]
+    },
+    {
+      "name": "Java",
+      "level": "Fortgeschritten",
+      "keywords": [
+        "Spring Boot",
+        "JPA",
+        "Spring Security",
+        "RESTful API",
+        "Microservices",
+        "Backend"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "Fortgeschritten",
+      "keywords": [
+        "Datenbank",
+        "SQL",
+        "Datenspeicherung",
+        "Backend"
+      ]
+    },
+    {
+      "name": "Git",
+      "level": "Fortgeschritten",
+      "keywords": [
+        "Versionskontrolle",
+        "Zusammenarbeit",
+        "Quellcode"
+      ]
+    },
+    {
+      "name": "GitHub",
+      "level": "Fortgeschritten",
+      "keywords": [
+        "Versionskontrolle",
+        "Zusammenarbeit",
+        "Quellcode",
+        "Git"
+      ]
+    },
+    {
+      "name": "Linux",
+      "level": "Fortgeschritten",
+      "keywords": [
+        "Debian",
+        "Arch Linux",
+        "Ubuntu",
+        "Bereitstellung",
+        "Betriebssystem",
+        "Bash/Shell-Skripting"
+      ]
+    },
+    {
+      "name": "Docker",
+      "level": "Fortgeschritten",
+      "keywords": [
+        "Bereitstellung",
+        "CI/CD",
+        "Container"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanisch",
+      "fluency": "Muttersprache"
+    },
+    {
+      "language": "Deutsch",
+      "fluency": "Mittelstufe"
+    },
+    {
+      "language": "Englisch",
+      "fluency": "Professionelle Arbeitskenntnisse"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Mathematik",
+      "keywords": [
+        "Lineare Algebra",
+        "Analysis"
+      ]
+    },
+    {
+      "name": "Cybersicherheit",
+      "keywords": [
+        "Sicherheitsforschung",
+        "Verschlüsselung",
+        "Best Practices"
+      ]
+    },
+    {
+      "name": "Open Source",
+      "keywords": [
+        "Beiträge",
+        "Bibliotheksentwicklung",
+        "Community"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "OpenCore",
+      "isActive": true,
+      "description": "Ein TypeScript-first Multiplayer-Runtime- und Backend-Framework für FiveM, konzipiert um Dependency Injection, strikte Typisierung, ereignisgesteuerte Architektur und modulare Ressourcen. OpenCore bietet eine technische Grundlage für den Aufbau skalierbarer Gameserver und Online-Dienste.",
+      "highlights": [
+        "TypeScript",
+        "Runtime",
+        "Framework",
+        "FiveM",
+        "Dependency Injection",
+        "Events",
+        "Validierung",
+        "Backend"
+      ],
+      "url": "https://opencorejs.dev",
+      "github": "https://github.com/newcore-network/opencore"
+    },
+    {
+      "name": "OpenCore CLI",
+      "isActive": true,
+      "description": "Command-Line-Tool zum Scaffolding, Erstellen, Validieren und Paketieren von OpenCore-Ressourcen. Es bietet Projektinitialisierung, Build-Pipelines, Deployment-Helfer und Entwicklerautomatisierung für FiveM-Server.",
+      "highlights": [
+        "CLI",
+        "Entwickler-Tools",
+        "TypeScript",
+        "Build-System",
+        "FiveM",
+        "Automatisierung"
+      ],
+      "url": "https://opencorejs.dev",
+      "github": "https://github.com/newcore-network/opencore-cli"
+    },
+    {
+      "name": "OpenCore Identity",
+      "isActive": true,
+      "description": "Authentifizierungs- und Identitätsdienst für OpenCore, der Account-Management, Rollen, Berechtigungen und Sitzungshandling über eine datenbankgestützte und API-gesteuerte Architektur bereitstellt.",
+      "highlights": [
+        "Authentifizierung",
+        "Autorisierung",
+        "RBAC",
+        "PostgreSQL",
+        "TypeScript",
+        "API",
+        "Sicherheit"
+      ],
+      "url": "https://opencorejs.dev",
+      "github": "https://github.com/newcore-network/opencore-identity"
+    },
+    {
+      "name": "Swagger for Fiber v3",
+      "isActive": true,
+      "description": "Swagger-Middleware für Fiber v3, die automatisch RESTful-API-Dokumentation für Golang-Backends bereitstellt und moderne OpenAPI-Workflows unterstützt.",
+      "highlights": [
+        "Golang",
+        "Fiber",
+        "Swagger",
+        "OpenAPI",
+        "Backend",
+        "Bibliothek"
+      ],
+      "url": null,
+      "github": "https://github.com/Flussen/swagger-fiber-v3"
+    },
+    {
+      "name": "GoPass",
+      "isActive": false,
+      "description": "Ein sicherer, offline-first Passwort-Manager, geschrieben in Golang, mit Fokus auf starke Verschlüsselung, lokale Vaults und minimale Angriffsfläche.",
+      "highlights": [
+        "Golang",
+        "Cybersicherheit",
+        "Verschlüsselung",
+        "Passwort-Manager",
+        "Desktop",
+        "Sicherheit"
+      ],
+      "url": null,
+      "github": "https://github.com/Flussen/GoPass"
+    },
+    {
+      "name": "VaultShield",
+      "isActive": false,
+      "description": "VaultShield ist eine Lösung für sicheres Credential-Management. Mit Leidenschaft während unseres Devathon-Events entworfen, zielt diese Plattform darauf ab, die Art und Weise zu revolutionieren, wie Teams ihre sensiblen Daten verwalten.",
+      "highlights": [
+        "Anmeldedaten",
+        "Verschlüsselung",
+        "Cybersicherheit",
+        "Dezentralisiert",
+        "Java",
+        "CI/CD",
+        "Docker",
+        "Auto-deploy"
+      ],
+      "url": null,
+      "github": "https://github.com/VaultShield"
+    }
+  ]
+}

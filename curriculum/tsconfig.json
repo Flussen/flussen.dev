@@ -14,7 +14,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@cv": ["./templates/cv.json"]
+      "@cv_en": ["./templates/cv_en.json"],
+      "@cv_es": ["./templates/cv_es.json"],
+      "@cv_de": ["./templates/cv_de.json"]
     }
   }
 }

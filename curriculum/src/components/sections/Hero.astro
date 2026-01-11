@@ -1,10 +1,15 @@
 ---
-
 import { ProfileCard } from "@/components/ui/ProfileCard";
 import Section from "../Section.astro";
-import info from "@cv";
+import type { Locale } from "@/lib/i18n";
 
-const basics = info.basics
+interface Props {
+  cvData: any;
+  locale: Locale;
+}
+
+const { cvData, locale } = Astro.props;
+const basics = cvData.basics;
 ---
 
 <Section>

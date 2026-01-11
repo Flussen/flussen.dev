@@ -9,8 +9,14 @@ import GitHubIcon from "../icons/GitHub.astro";
 import LinuxIcon from "../icons/linux.astro";
 import DockerIcon from "../icons/docker.astro";
 import Section from "../Section.astro";
+import { getTranslation, type Locale } from "@/lib/i18n";
 
-import info from "@cv";
+interface Props {
+  cvData: any;
+  locale: Locale;
+}
+
+const { cvData, locale } = Astro.props;
 
 type Skill = {
   name: string;
@@ -28,15 +34,15 @@ const skills: Skill[] = [
 ];
 ---
 
-<Section title="Skills">
-  <div class="flex flex-wrap gap-2">
+<Section title={getTranslation(locale, "Skills")}>
+  <div class="flex flex-wrap gap-1.5 sm:gap-2">
     {skills.map(({ name, Icon }) => (
       <div
         class="inline-flex items-center rounded-md border border-border/60
-                bg-card/60 backdrop-blur  px-3 py-1 text-sm font-medium text-foreground/90
+                bg-card/60 backdrop-blur px-2 py-0.5 sm:px-3 sm:py-1 text-xs sm:text-sm font-medium text-foreground/90
                shadow-sm">
         <span
-          class="flex h-6 w-6 items-center justify-center mr-0.5">
+          class="flex h-4 w-4 sm:h-6 sm:w-6 items-center justify-center mr-1 sm:mr-0.5">
           <Icon />
         </span>
         <span>{name}</span>

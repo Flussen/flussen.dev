@@ -4,12 +4,12 @@ type Props = {
     summary: string;
 };
 
-type LangId = "java" | "go" | "ts" | "python";
+type LangId = "yaml" | "ts" | "go" | "python";
 
 const languages: { id: LangId; label: string; fileName: string }[] = [
-    { id: "java", label: "Java", fileName: "AboutMe.java" },
-    { id: "go", label: "Go", fileName: "about_me.go" },
+    { id: "yaml", label: "YAML", fileName: "about-me.yml" },
     { id: "ts", label: "TypeScript", fileName: "aboutMe.ts" },
+    { id: "go", label: "Go", fileName: "about_me.go" },
     { id: "python", label: "Python", fileName: "about_me.py" },
 ];
 
@@ -29,10 +29,8 @@ export default function AboutMeCode({ summary }: Props) {
         };
     }, []);
 
-
     return (
         <div className="rounded-lg border border-border/60 bg-[#1e1e1e]/90 backdrop-blur shadow-md overflow-hidden font-mono text-[13px] leading-relaxed">
-            {/* Barra superior tipo editor */}
             <div className="border-b border-black/30 bg-[#2d2d2d]">
                 <div className="flex items-center justify-between px-3 py-2">
                     <div className="flex items-center gap-1 text-[11px] text-gray-300">
@@ -45,8 +43,7 @@ export default function AboutMeCode({ summary }: Props) {
                     <span className="text-xs text-[#2d2d2d] select-none">...</span>
                 </div>
 
-                {/* Tabs de lenguaje */}
-                <div className="flex gap-1 px-2 pb-2 text-[11px]">
+                <div className="flex gap-1 px-2 pb-2 text-[11px] overflow-x-auto">
                     {languages.map((lang, i) => (
                         <button
                             key={lang.id}
@@ -55,13 +52,14 @@ export default function AboutMeCode({ summary }: Props) {
                                 setIndex(i);
                                 if (intervalRef.current) {
                                     clearInterval(intervalRef.current);
-                                    intervalRef.current = null; 
+                                    intervalRef.current = null;
                                 }
                             }}
-                            className={`rounded-md px-2 py-1 transition-colors ${i === index
+                            className={`rounded-md px-2 py-1 transition-colors whitespace-nowrap ${
+                                i === index
                                     ? "bg-[#1e1e1e] text-gray-100"
                                     : "bg-transparent text-gray-400 hover:bg-[#1e1e1e]/60 hover:text-gray-100"
-                                }`}
+                            }`}
                         >
                             {lang.label}
                         </button>
@@ -74,42 +72,46 @@ export default function AboutMeCode({ summary }: Props) {
                 {/* Línea vertical tipo gutter */}
                 <div className="pointer-events-none absolute left-5 top-0 h-full w-px bg-white/5" />
 
-                {/* Java */}
+                {/* YAML */}
                 <div
-                    className={`${current.id === "java"
+                    className={`${
+                        current.id === "yaml"
                             ? "relative opacity-100 blur-0 translate-y-0"
                             : "absolute inset-0 opacity-0 blur-sm -translate-y-1 pointer-events-none"
-                        } transition-all duration-500 ease-out`}
+                    } transition-all duration-500 ease-out`}
                 >
-                    <JavaCode summary={summary} />
-                </div>
-
-                {/* Go */}
-                <div
-                    className={`${current.id === "go"
-                            ? "relative opacity-100 blur-0 translate-y-0"
-                            : "absolute inset-0 opacity-0 blur-sm -translate-y-1 pointer-events-none"
-                        } transition-all duration-500 ease-out`}
-                >
-                    <GoCode summary={summary} />
+                    <YamlCode summary={summary} />
                 </div>
 
                 {/* TypeScript */}
                 <div
-                    className={`${current.id === "ts"
+                    className={`${
+                        current.id === "ts"
                             ? "relative opacity-100 blur-0 translate-y-0"
                             : "absolute inset-0 opacity-0 blur-sm -translate-y-1 pointer-events-none"
-                        } transition-all duration-500 ease-out`}
+                    } transition-all duration-500 ease-out`}
                 >
                     <TsCode summary={summary} />
                 </div>
 
-                {/* Python */}
+                {/* Go */}
                 <div
-                    className={`${current.id === "python"
+                    className={`${
+                        current.id === "go"
                             ? "relative opacity-100 blur-0 translate-y-0"
                             : "absolute inset-0 opacity-0 blur-sm -translate-y-1 pointer-events-none"
-                        } transition-all duration-500 ease-out`}
+                    } transition-all duration-500 ease-out`}
+                >
+                    <GoCode summary={summary} />
+                </div>
+
+                {/* Python */}
+                <div
+                    className={`${
+                        current.id === "python"
+                            ? "relative opacity-100 blur-0 translate-y-0"
+                            : "absolute inset-0 opacity-0 blur-sm -translate-y-1 pointer-events-none"
+                    } transition-all duration-500 ease-out`}
                 >
                     <PythonCode summary={summary} />
                 </div>
@@ -120,108 +122,55 @@ export default function AboutMeCode({ summary }: Props) {
 
 /* === Variantes de código con bio legible en cada lenguaje === */
 
-function JavaCode({ summary }: { summary: string }) {
-    return (
-        <pre className="whitespace-pre-wrap wrap-break-word pl-4 text-gray-100">
-            <code>
-                <span className="text-[#6A9955]">// Backend developer profile</span>
-                {"\n"}
-                <span className="text-[#569CD6]">public</span>{" "}
-                <span className="text-[#569CD6]">class</span>{" "}
-                <span className="text-[#4EC9B0]">AboutMe</span> {"{"}
-                {"\n"}
-                {"  "}
-                <span className="text-[#569CD6]">private</span>{" "}
-                <span className="text-[#4EC9B0]">final</span>{" "}
-                <span className="text-[#4EC9B0]">String</span> role =
-                {" "}
-                <span className="text-[#CE9178]">"Backend Developer"</span>;
-                {"\n"}
-                {"  "}
-                <span className="text-[#569CD6]">private</span>{" "}
-                <span className="text-[#4EC9B0]">final</span>{" "}
-                <span className="text-[#4EC9B0]">String[]</span> stack =
-                {" "}
-                <span className="text-[#CE9178]">
-                    {"{\"Go\", \"Java\", \"PostgreSQL\", \"Docker\", \"Linux\"}"}
-                </span>
-                ;
-                {"\n"}
-                {"  "}
-                <span className="text-[#569CD6]">private</span>{" "}
-                <span className="text-[#4EC9B0]">final</span>{" "}
-                <span className="text-[#4EC9B0]">String</span> bio =
-                {" "}
-                <span className="text-[#CE9178]">"{summary}"</span>;
-                {"\n\n"}
-                {"  "}
-                <span className="text-[#569CD6]">public</span>{" "}
-                <span className="text-[#4EC9B0]">String</span>{" "}
-                <span className="text-[#DCDCAA]">describe</span>() {"{"}
-                {"\n"}
-                {"    "}
-                <span className="text-[#569CD6]">return</span> bio;
-                {"\n"}
-                {"  "}
-                {"}"}
-                {"\n"}
-                {"}"}
-            </code>
-        </pre>
-    );
-}
+// Colores consistentes para syntax highlighting
+const colors = {
+    comment: "text-[#6A9955]",
+    keyword: "text-[#569CD6]",
+    type: "text-[#4EC9B0]",
+    string: "text-[#CE9178]",
+    function: "text-[#DCDCAA]",
+    variable: "text-[#9CDCFE]",
+    property: "text-[#9CDCFE]",
+    number: "text-[#B5CEA8]",
+};
 
-function GoCode({ summary }: { summary: string }) {
+function YamlCode({ summary }: { summary: string }) {
     return (
         <pre className="whitespace-pre-wrap wrap-break-word pl-4 text-gray-100">
             <code>
-                <span className="text-[#6A9955]">// Backend developer profile</span>
-                {"\n"}
-                <span className="text-[#569CD6]">package</span>{" "}
-                <span className="text-[#DCDCAA]">main</span>
+                <span className={colors.comment}># Backend Developer Profile</span>
                 {"\n\n"}
-                <span className="text-[#569CD6]">type</span>{" "}
-                <span className="text-[#4EC9B0]">AboutMe</span>{" "}
-                <span className="text-[#569CD6]">struct</span> {"{"}
+                <span className={colors.property}>name</span>: <span className={colors.string}>Alexander Rios</span>
                 {"\n"}
-                {"  "}
-                role <span className="text-[#4EC9B0]">string</span>
-                {"\n"}
-                {"  "}
-                stack []<span className="text-[#4EC9B0]">string</span>
-                {"\n"}
-                {"  "}
-                bio  <span className="text-[#4EC9B0]">string</span>
-                {"\n"}
-                {"}"}
+                <span className={colors.property}>role</span>: <span className={colors.string}>Backend Developer</span>
                 {"\n\n"}
-                <span className="text-[#569CD6]">var</span> me ={" "}
-                <span className="text-[#4EC9B0]">AboutMe</span>{"{"}
+                <span className={colors.property}>stack</span>:
                 {"\n"}
-                {"  "}
-                role:{" "}
-                <span className="text-[#CE9178]">"Backend Developer"</span>,
+                {"  "}- <span className={colors.string}>Golang</span>
                 {"\n"}
-                {"  "}
-                stack: []<span className="text-[#4EC9B0]">string</span>
-                {"{"}
-                <span className="text-[#CE9178]">
-                    `"Go", "Java", "PostgreSQL", "Docker", "Linux"`
-                </span>
-                {"}"}
-                ,{"\n"}
-                {"  "}
-                bio: <span className="text-[#CE9178]">"{summary}"</span>,
+                {"  "}- <span className={colors.string}>Java</span>
                 {"\n"}
-                {"}"}
+                {"  "}- <span className={colors.string}>PostgreSQL</span>
+                {"\n"}
+                {"  "}- <span className={colors.string}>Docker</span>
+                {"\n"}
+                {"  "}- <span className={colors.string}>Linux</span>
                 {"\n\n"}
-                <span className="text-[#569CD6]">func</span>{" "}
-                <span className="text-[#DCDCAA]">main</span>() {"{"}
+                <span className={colors.property}>bio</span>: <span className={colors.string}>|</span>
                 {"\n"}
-                {"  "}
-                <span className="text-[#6A9955]">// use me.bio here</span>
+                {"  "}<span className={colors.string}>{summary}</span>
+                {"\n\n"}
+                <span className={colors.property}>location</span>:
                 {"\n"}
-                {"}"}
+                {"  "}<span className={colors.property}>country</span>: <span className={colors.string}>Austria</span>
+                {"\n"}
+                {"  "}<span className={colors.property}>region</span>: <span className={colors.string}>Tyrol</span>
+                {"\n\n"}
+                <span className={colors.property}>contact</span>:
+                {"\n"}
+                {"  "}<span className={colors.property}>email</span>: <span className={colors.string}>flussen0@gmail.com</span>
+                {"\n"}
+                {"  "}<span className={colors.property}>github</span>: <span className={colors.string}>github.com/Flussen</span>
             </code>
         </pre>
     );
@@ -231,48 +180,122 @@ function TsCode({ summary }: { summary: string }) {
     return (
         <pre className="whitespace-pre-wrap wrap-break-word pl-4 text-gray-100">
             <code>
-                <span className="text-[#6A9955]">// Backend developer profile</span>
+                <span className={colors.comment}>// Backend developer profile</span>
                 {"\n"}
-                <span className="text-[#569CD6]">type</span>{" "}
-                <span className="text-[#4EC9B0]">AboutMe</span> = {"{"}
-                {"\n"}
-                {"  "}
-                role: <span className="text-[#4EC9B0]">string</span>;
+                <span className={colors.keyword}>interface</span>{" "}
+                <span className={colors.type}>Developer</span> {"{"}
                 {"\n"}
                 {"  "}
-                stack: <span className="text-[#4EC9B0]">string</span>[];
+                name: <span className={colors.type}>string</span>;
                 {"\n"}
                 {"  "}
-                bio: <span className="text-[#4EC9B0]">string</span>;
+                role: <span className={colors.type}>string</span>;
+                {"\n"}
+                {"  "}
+                stack: <span className={colors.type}>string</span>[];
+                {"\n"}
+                {"  "}
+                bio: <span className={colors.type}>string</span>;
+                {"\n"}
+                {"  "}
+                location: {"{"}
+                {"\n"}
+                {"    "}
+                country: <span className={colors.type}>string</span>;
+                {"\n"}
+                {"    "}
+                region: <span className={colors.type}>string</span>;
+                {"\n"}
+                {"  "}
+                {"}"};
                 {"\n"}
                 {"};"}
                 {"\n\n"}
-                <span className="text-[#569CD6]">const</span>{" "}
-                <span className="text-[#9CDCFE]">me</span>:{" "}
-                <span className="text-[#4EC9B0]">AboutMe</span> = {"{"}
+                <span className={colors.keyword}>const</span>{" "}
+                <span className={colors.variable}>me</span>:{" "}
+                <span className={colors.type}>Developer</span> = {"{"}
                 {"\n"}
                 {"  "}
-                role: <span className="text-[#CE9178]">"Backend Developer"</span>,
+                name: <span className={colors.string}>"Alexander Rios"</span>,
                 {"\n"}
                 {"  "}
-                stack: [
-                <span className="text-[#CE9178]">
-                    "Go", "Java", "PostgreSQL", "Docker", "Linux"
-                </span>
-                ],
+                role: <span className={colors.string}>"Backend Developer"</span>,
                 {"\n"}
                 {"  "}
-                bio: <span className="text-[#CE9178]">"{summary}"</span>,
+                stack: [<span className={colors.string}>"Golang"</span>, <span className={colors.string}>"Java"</span>, <span className={colors.string}>"PostgreSQL"</span>, <span className={colors.string}>"Docker"</span>, <span className={colors.string}>"Linux"</span>],
+                {"\n"}
+                {"  "}
+                bio: <span className={colors.string}>`{summary}`</span>,
+                {"\n"}
+                {"  "}
+                location: {"{"} country: <span className={colors.string}>"Austria"</span>, region: <span className={colors.string}>"Tyrol"</span> {"}"},
                 {"\n"}
                 {"};"}
+            </code>
+        </pre>
+    );
+}
+
+function GoCode({ summary }: { summary: string }) {
+    return (
+        <pre className="whitespace-pre-wrap wrap-break-word pl-4 text-gray-100">
+            <code>
+                <span className={colors.comment}>// Backend developer profile</span>
+                {"\n"}
+                <span className={colors.keyword}>package</span>{" "}
+                <span className={colors.function}>main</span>
                 {"\n\n"}
-                <span className="text-[#569CD6]">function</span>{" "}
-                <span className="text-[#DCDCAA]">describe</span>(
-                <span className="text-[#9CDCFE]">profile</span>:{" "}
-                <span className="text-[#4EC9B0]">AboutMe</span>) {"{"}
+                <span className={colors.keyword}>type</span>{" "}
+                <span className={colors.type}>Developer</span>{" "}
+                <span className={colors.keyword}>struct</span> {"{"}
                 {"\n"}
                 {"  "}
-                <span className="text-[#569CD6]">return</span> profile.bio;
+                Name     <span className={colors.type}>string</span>
+                {"\n"}
+                {"  "}
+                Role     <span className={colors.type}>string</span>
+                {"\n"}
+                {"  "}
+                Stack    []<span className={colors.type}>string</span>
+                {"\n"}
+                {"  "}
+                Bio      <span className={colors.type}>string</span>
+                {"\n"}
+                {"  "}
+                Location <span className={colors.type}>Location</span>
+                {"\n"}
+                {"}"}
+                {"\n\n"}
+                <span className={colors.keyword}>type</span>{" "}
+                <span className={colors.type}>Location</span>{" "}
+                <span className={colors.keyword}>struct</span> {"{"}
+                {"\n"}
+                {"  "}
+                Country <span className={colors.type}>string</span>
+                {"\n"}
+                {"  "}
+                Region  <span className={colors.type}>string</span>
+                {"\n"}
+                {"}"}
+                {"\n\n"}
+                <span className={colors.keyword}>var</span> me = <span className={colors.type}>Developer</span>{"{"}
+                {"\n"}
+                {"  "}
+                Name: <span className={colors.string}>"Alexander Rios"</span>,
+                {"\n"}
+                {"  "}
+                Role: <span className={colors.string}>"Backend Developer"</span>,
+                {"\n"}
+                {"  "}
+                Stack: []<span className={colors.type}>string</span>{"{"}
+                <span className={colors.string}>"Golang"</span>, <span className={colors.string}>"Java"</span>, <span className={colors.string}>"PostgreSQL"</span>, <span className={colors.string}>"Docker"</span>, <span className={colors.string}>"Linux"</span>
+                {"}"},
+                {"\n"}
+                {"  "}
+                Bio: <span className={colors.string}>`{summary}`</span>,
+                {"\n"}
+                {"  "}
+                Location: <span className={colors.type}>Location</span>{"{"}Country: <span className={colors.string}>"Austria"</span>, Region: <span className={colors.string}>"Tyrol"</span>{"}"},
                 {"\n"}
                 {"}"}
             </code>
@@ -284,34 +307,51 @@ function PythonCode({ summary }: { summary: string }) {
     return (
         <pre className="whitespace-pre-wrap wrap-break-word pl-4 text-gray-100">
             <code>
-                <span className="text-[#6A9955]"># Backend developer profile</span>
+                <span className={colors.comment}># Backend developer profile</span>
                 {"\n"}
-                <span className="text-[#569CD6]">class</span>{" "}
-                <span className="text-[#4EC9B0]">AboutMe</span>:
+                <span className={colors.keyword}>class</span>{" "}
+                <span className={colors.type}>Developer</span>:
                 {"\n"}
-                {"  "}
-                <span className="text-[#569CD6]">def</span>{" "}
-                <span className="text-[#DCDCAA]">__init__</span>(self):
+                {"  "}<span className={colors.keyword}>def</span>{" "}
+                <span className={colors.function}>__init__</span>(self):
                 {"\n"}
                 {"    "}
-                self.role = <span className="text-[#CE9178]">"Backend Developer"</span>
+                self.name = <span className={colors.string}>"Alexander Rios"</span>
+                {"\n"}
+                {"    "}
+                self.role = <span className={colors.string}>"Backend Developer"</span>
                 {"\n"}
                 {"    "}
                 self.stack = [
-                <span className="text-[#CE9178]">
-                    "Go", "Java", "PostgreSQL", "Docker", "Linux"
-                </span>
+                {"\n"}
+                {"      "}
+                <span className={colors.string}>"Golang"</span>, <span className={colors.string}>"Java"</span>, <span className={colors.string}>"PostgreSQL"</span>,
+                {"\n"}
+                {"      "}
+                <span className={colors.string}>"Docker"</span>, <span className={colors.string}>"Linux"</span>
+                {"\n"}
+                {"    "}
                 ]
                 {"\n"}
                 {"    "}
-                self.bio = <span className="text-[#CE9178]">"{summary}"</span>
-                {"\n\n"}
-                {"  "}
-                <span className="text-[#569CD6]">def</span>{" "}
-                <span className="text-[#DCDCAA]">describe</span>(self):
+                self.bio = <span className={colors.string}>"""</span>
                 {"\n"}
                 {"    "}
-                <span className="text-[#569CD6]">return</span> self.bio
+                <span className={colors.string}>{summary}</span>
+                {"\n"}
+                {"    "}
+                <span className={colors.string}>"""</span>
+                {"\n"}
+                {"    "}
+                self.location = {"{"}
+                {"\n"}
+                {"      "}<span className={colors.string}>"country"</span>: <span className={colors.string}>"Austria"</span>,
+                {"\n"}
+                {"      "}<span className={colors.string}>"region"</span>: <span className={colors.string}>"Tyrol"</span>
+                {"\n"}
+                {"    "}{"}"}
+                {"\n\n"}
+                <span className={colors.variable}>me</span> = <span className={colors.type}>Developer</span>()
             </code>
         </pre>
     );
