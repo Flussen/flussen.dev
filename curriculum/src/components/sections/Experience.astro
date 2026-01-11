@@ -1,130 +1,69 @@
 ---
 import Section from "../Section.astro";
+import info from "@cv";
 
-import { work } from "@cv";
+interface Work {
+  name: string;
+  position: string;
+  url: string | null;
+  startDate: string;
+  endDate: string | null;
+  summary: string;
+  highlights: string[];
+}
+
+const work: Work[] = info.work;
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+}
 ---
 
-<Section title="Work experience">
-  <ul>
-    {
-      work.map(
-        ({ name, startDate, endDate, position, summary, highlights, url }) => {
-          const startYear = new Date(startDate).getFullYear();
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Current";
-
-          return (
-            <li>
-              <article>
-                <header>
-                  <div>
-                    <h3>
-                      <a href={url} title={`Ver ${name}`} target="_blank">
-                        {name}
-                      </a>
-                    </h3>
-                    <h4>{position}</h4>
-                  </div>
-
-                  <div>
-                    <time datetime={startDate} data-title={startDate}>
-                      {startYear}
-                    </time>
-                    {" - "}
-                    <time datetime={endDate} data-title={endDate}>
-                      {endYear}
-                    </time>
-                  </div>
-                </header>
-
-                <footer>
-                  <p>{summary}</p>
-                </footer>
-              </article>
-            </li>
-          );
-        }
-      )
-    }
-  </ul>
+<Section title="Work Experience">
+  <div class="space-y-4">
+    {work.map(({ name, position, url, startDate, endDate, summary }) => (
+      <article
+        class="group relative rounded-lg border border-border/60 bg-card/60 backdrop-blur p-5 shadow-sm transition-colors hover:bg-card/80">
+        <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+          <div class="space-y-1">
+            <h3 class="font-semibold text-foreground">
+              {position}
+            </h3>
+            {url ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                {name}
+                <svg
+                  class="h-3 w-3"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            ) : (
+              <p class="text-sm text-muted-foreground">{name}</p>
+            )}
+          </div>
+          <time class="text-xs text-muted-foreground font-mono whitespace-nowrap mt-1 sm:mt-0">
+            {formatDate(startDate)} — {endDate ? formatDate(endDate) : "Present"}
+          </time>
+        </div>
+        {summary && (
+          <p class="mt-3 text-sm text-muted-foreground leading-relaxed">
+            {summary}
+          </p>
+        )}
+      </article>
+    ))}
+  </div>
 </Section>
-
-<style>
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  article h3 {
-    font-weight: 500;
-    color: #111;
-  }
-
-  article a {
-    color: #111;
-  }
-
-  article a:hover {
-    text-decoration: underline;
-  }
-
-  article h4 {
-    color: #222;
-    font-weight: 400;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 4px;
-  }
-
-  time {
-    color: #555;
-    font-size: 0.85rem;
-    min-width: 102px;
-    cursor: default;
-  }
-
-  [data-title]:hover:after {
-    opacity: 1;
-    transition: all 0.1s ease-in-out 0.5s;
-    visibility: visible;
-  }
-
-  [data-title]:after {
-    content: attr(data-title);
-    background-color: #333;
-    color: #fff;
-    font-size: 0.75rem;
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      "Courier New",
-      monospace;
-    position: absolute;
-    padding: 0.2rem 0.5rem;
-    bottom: -1.4rem;
-    left: 50%;
-    white-space: nowrap;
-    box-shadow: 1px 1px 1px #222222;
-    opacity: 0;
-    border: 1px solid #111111;
-    z-index: 99999;
-    visibility: hidden;
-    border-radius: 6px;
-  }
-
-  [data-title] {
-    position: relative;
-  }
-
-  @media (width <= 700px) {
-    time {
-      text-align: right;
-    }
-  }
-</style>

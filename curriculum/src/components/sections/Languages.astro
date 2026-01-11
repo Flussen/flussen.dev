@@ -1,34 +1,29 @@
 ---
 import Section from "../Section.astro";
+import info from "@cv";
 
-import { languages } from "@cv";
+interface Language {
+  language: string;
+  fluency: string | null;
+}
+
+const languages: Language[] = info.languages;
 ---
 
 <Section title="Languages">
-  <p>
-    {
-      languages.map(({ language, fluency }) => {
-        return (
-          <ul>
-            <text>{language}</text> {fluency}
-          </ul>
-        );
-      })
-    }
-  </p>
+  <div class="flex flex-wrap gap-3">
+    {languages.map(({ language, fluency }) => (
+      <div
+        class="inline-flex items-center gap-2 rounded-md border border-border/60
+               bg-card/60 backdrop-blur px-4 py-2 text-sm font-medium text-foreground/90
+               shadow-sm transition-colors hover:bg-card/80">
+        <span class="font-semibold">{language}</span>
+        {fluency && (
+          <span class="text-xs text-muted-foreground">
+            · {fluency}
+          </span>
+        )}
+      </div>
+    ))}
+  </div>
 </Section>
-
-<style>
-  text {
-    background: #d8d8d8;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    gap: 4px;
-    padding: 0.2rem 0.6rem;
-  }
-
-  ul {
-    margin: 0.5rem;
-  }
-</style>

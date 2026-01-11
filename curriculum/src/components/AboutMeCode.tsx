@@ -72,7 +72,7 @@ export default function AboutMeCode({ summary }: Props) {
             {/* Contenido con transición suave */}
             <div className="relative px-4 py-3 text-[13px]">
                 {/* Línea vertical tipo gutter */}
-                <div className="pointer-events-none absolute left-8 top-0 h-full w-px bg-white/5" />
+                <div className="pointer-events-none absolute left-5 top-0 h-full w-px bg-white/5" />
 
                 {/* Java */}
                 <div

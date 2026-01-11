@@ -1,68 +1,75 @@
 ---
 import Section from "../Section.astro";
+import info from "@cv";
 
-import { education } from "@cv";
+interface Education {
+  institution: string;
+  url: string | null;
+  area: string;
+  studyType: string;
+  startDate: string;
+  endDate: string | null;
+  courses: string[];
+}
+
+const education: Education[] = info.education;
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+}
 ---
 
 <Section title="Education">
-  <ul>
-    {
-      education.map(({ institution, startDate, endDate, area }) => {
-        const startYear = new Date(startDate).getFullYear();
-        const endYear =
-          endDate != null ? new Date(endDate).getFullYear() : "Current";
-        const years = `${startYear} - ${endYear}`;
-
-        return (
-          <li>
-            <article>
-              <header>
-                <div>
-                  <h3>{institution}</h3>
-                </div>
-
-                <time>{years}</time>
-              </header>
-
-              <footer>
-                <p>{area}</p>
-              </footer>
-            </article>
-          </li>
-        );
-      })
-    }
-  </ul>
+  <div class="space-y-4">
+    {education.map(({ institution, url, area, studyType, startDate, endDate, courses }) => (
+      <article
+        class="group relative rounded-lg border border-border/60 bg-card/60 backdrop-blur p-5 shadow-sm transition-colors hover:bg-card/80">
+        <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+          <div class="space-y-1">
+            <h3 class="font-semibold text-foreground">
+              {area}
+            </h3>
+            {url ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                {institution}
+                <svg
+                  class="h-3 w-3"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            ) : (
+              <p class="text-sm text-muted-foreground">{institution}</p>
+            )}
+          </div>
+          <time class="text-xs text-muted-foreground font-mono whitespace-nowrap mt-1 sm:mt-0">
+            {formatDate(startDate)} — {endDate ? formatDate(endDate) : "Present"}
+          </time>
+        </div>
+        {courses && courses.length > 0 && (
+          <div class="mt-3 flex flex-wrap gap-2">
+            {courses.map((course) => (
+              <span
+                class="inline-flex items-center rounded-md border border-border/40 bg-muted/40
+                       px-2 py-0.5 text-xs text-muted-foreground">
+                {course}
+              </span>
+            ))}
+          </div>
+        )}
+      </article>
+    ))}
+  </div>
 </Section>
-
-<style>
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  article h3 {
-    font-weight: 500;
-    color: #111;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 4px;
-  }
-
-  time {
-    color: #555;
-    font-size: 0.85rem;
-    min-width: 102px;
-  }
-
-  @media (width <= 700px) {
-    time {
-      text-align: right;
-    }
-  }
-</style>
