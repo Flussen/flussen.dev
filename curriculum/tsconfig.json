@@ -1,14 +1,22 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ],
   "compilerOptions": {
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
     "baseUrl": ".",
     "paths": {
-      "@cv": [
-        "./cv.json"
-      ],
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"],
+      "@cv_en": ["./templates/cv_en.json"],
+      "@cv_es": ["./templates/cv_es.json"],
+      "@cv_de": ["./templates/cv_de.json"]
     }
   }
 }

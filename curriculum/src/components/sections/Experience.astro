@@ -1,130 +1,135 @@
 ---
 import Section from "../Section.astro";
+import { getTranslation, type Locale } from "@/lib/i18n";
 
-import { work } from "@cv";
+interface Props {
+  cvData: any;
+  locale: Locale;
+}
+
+interface Work {
+  name: string;
+  position: string;
+  url: string | null;
+  startDate: string;
+  endDate: string | null;
+  summary: string;
+  highlights: string[];
+}
+
+const { cvData, locale } = Astro.props;
+const work: Work[] = cvData.work;
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+}
+
+function calculateDuration(startDate: string, endDate: string | null): string {
+  const start = new Date(startDate);
+  const end = endDate ? new Date(endDate) : new Date();
+  const months = Math.floor((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24 * 30));
+  const years = Math.floor(months / 12);
+  const remainingMonths = months % 12;
+
+  if (years > 0 && remainingMonths > 0) {
+    return `${years} yr${years > 1 ? 's' : ''} ${remainingMonths} mo${remainingMonths > 1 ? 's' : ''}`;
+  } else if (years > 0) {
+    return `${years} yr${years > 1 ? 's' : ''}`;
+  } else {
+    return `${remainingMonths} mo${remainingMonths > 1 ? 's' : ''}`;
+  }
+}
 ---
 
-<Section title="Work experience">
-  <ul>
-    {
-      work.map(
-        ({ name, startDate, endDate, position, summary, highlights, url }) => {
-          const startYear = new Date(startDate).getFullYear();
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Current";
+<Section title={getTranslation(locale, "Work Experience")}>
+  <div class="relative space-y-6">
+    <!-- Timeline vertical line -->
+    <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary/40 via-primary/20 to-transparent hidden sm:block" />
 
-          return (
-            <li>
-              <article>
-                <header>
-                  <div>
-                    <h3>
-                      <a href={url} title={`Ver ${name}`} target="_blank">
-                        {name}
-                      </a>
-                    </h3>
-                    <h4>{position}</h4>
-                  </div>
+    {work.map(({ name, position, url, startDate, endDate, summary, highlights }, index) => (
+      <article class="relative">
+        <!-- Timeline dot -->
+        <div class="absolute left-0 top-6 hidden sm:flex h-8 w-8 items-center justify-center">
+          <div class="h-3 w-3 rounded-full border-2 border-primary bg-background shadow-lg shadow-primary/20" />
+          {!endDate && (
+            <span class="absolute h-3 w-3 rounded-full bg-primary/40 animate-ping" />
+          )}
+        </div>
 
-                  <div>
-                    <time datetime={startDate} data-title={startDate}>
-                      {startYear}
-                    </time>
-                    {" - "}
-                    <time datetime={endDate} data-title={endDate}>
-                      {endYear}
-                    </time>
-                  </div>
-                </header>
+        <div class="sm:ml-16 group relative rounded-lg border border-border/60
+                    bg-linear-to-br from-card/80 to-card/40 backdrop-blur p-4 sm:p-6
+                    shadow-sm transition-all duration-300 hover:shadow-md hover:border-border/80
+                    hover:from-card hover:to-card/60">
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <div class="space-y-2 flex-1 min-w-0">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-semibold text-base sm:text-lg text-foreground leading-tight break-words">
+                    {position}
+                  </h3>
+                  {url ? (
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      class="inline-flex items-center gap-1.5 mt-1 text-sm font-medium text-primary hover:text-primary/80 transition-colors">
+                      {name}
+                      <svg
+                        class="h-3.5 w-3.5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2.5">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </a>
+                  ) : (
+                    <p class="mt-1 text-sm font-medium text-muted-foreground">{name}</p>
+                  )}
+                </div>
+                {!endDate && (
+                  <span class="inline-flex self-start items-center gap-1.5 rounded-full bg-emerald-500/10 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-medium text-emerald-600 dark:text-emerald-400 ring-1 ring-emerald-500/20 whitespace-nowrap">
+                    <span class="h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    Current
+                  </span>
+                )}
+              </div>
+            </div>
+            <div class="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-1 shrink-0 pt-2 sm:pt-0 border-t sm:border-0 border-border/40">
+              <time class="text-xs font-mono text-muted-foreground/80 whitespace-nowrap">
+                {formatDate(startDate)} — {endDate ? formatDate(endDate) : "Present"}
+              </time>
+              <span class="text-xs font-medium text-muted-foreground/60">
+                {calculateDuration(startDate, endDate)}
+              </span>
+            </div>
+          </div>
 
-                <footer>
-                  <p>{summary}</p>
-                </footer>
-              </article>
-            </li>
-          );
-        }
-      )
-    }
-  </ul>
+          {summary && (
+            <p class="mt-4 text-sm text-muted-foreground leading-relaxed">
+              {summary}
+            </p>
+          )}
+
+          {highlights && highlights.length > 0 && (
+            <ul class="mt-4 space-y-2">
+              {highlights.map((highlight) => (
+                <li class="flex items-start gap-2 text-sm text-muted-foreground">
+                  <svg class="h-5 w-5 shrink-0 text-primary/60 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="leading-relaxed">{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
 </Section>
-
-<style>
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  article h3 {
-    font-weight: 500;
-    color: #111;
-  }
-
-  article a {
-    color: #111;
-  }
-
-  article a:hover {
-    text-decoration: underline;
-  }
-
-  article h4 {
-    color: #222;
-    font-weight: 400;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 4px;
-  }
-
-  time {
-    color: #555;
-    font-size: 0.85rem;
-    min-width: 102px;
-    cursor: default;
-  }
-
-  [data-title]:hover:after {
-    opacity: 1;
-    transition: all 0.1s ease-in-out 0.5s;
-    visibility: visible;
-  }
-
-  [data-title]:after {
-    content: attr(data-title);
-    background-color: #333;
-    color: #fff;
-    font-size: 0.75rem;
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      "Courier New",
-      monospace;
-    position: absolute;
-    padding: 0.2rem 0.5rem;
-    bottom: -1.4rem;
-    left: 50%;
-    white-space: nowrap;
-    box-shadow: 1px 1px 1px #222222;
-    opacity: 0;
-    border: 1px solid #111111;
-    z-index: 99999;
-    visibility: hidden;
-    border-radius: 6px;
-  }
-
-  [data-title] {
-    position: relative;
-  }
-
-  @media (width <= 700px) {
-    time {
-      text-align: right;
-    }
-  }
-</style>

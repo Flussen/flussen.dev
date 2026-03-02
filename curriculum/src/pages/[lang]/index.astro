@@ -1,0 +1,82 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import "../../styles/global.css";
+import { ModeToggle } from "@/components/ModeToggle";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+
+import Hero from "@/components/sections/Hero.astro";
+import About from "@/components/sections/About.astro";
+import Skills from "@/components/sections/Skills.astro";
+import Experience from "@/components/sections/Experience.astro";
+import Education from "@/components/sections/Education.astro";
+import Projects from "@/components/sections/Projects.astro";
+import Languages from "@/components/sections/Languages.astro";
+
+import type { Locale } from "@/lib/i18n";
+
+import cv_en from "@cv_en";
+import cv_es from "@cv_es";
+import cv_de from "@cv_de";
+
+const cvMap = {
+  en: cv_en,
+  es: cv_es,
+  de: cv_de,
+} as const;
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "es" } },
+    { params: { lang: "de" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const locale = lang as Locale;
+const info = cvMap[locale];
+const { name, label } = info.basics;
+---
+
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>
+
+<Layout title={`${name}'s portfolio - ${label}`}>
+  <header class="w-full flex justify-end gap-2 sm:gap-3 p-2 sm:p-4 fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40 sm:static sm:bg-transparent sm:backdrop-blur-none sm:border-0">
+    <LanguageSwitcher client:load />
+    <ModeToggle client:load />
+  </header>
+  <main class="w-full mx-auto px-4 py-20 sm:py-8 sm:px-8 md:px-16 md:py-16 max-w-5xl mt-4 sm:mt-0">
+    <!-- Sections -->
+    <Hero cvData={info} locale={locale} />
+    <Skills cvData={info} locale={locale} />
+    <About cvData={info} locale={locale} />
+    <Experience cvData={info} locale={locale} />
+    <Education cvData={info} locale={locale} />
+    <Projects cvData={info} locale={locale} />
+    <Languages cvData={info} locale={locale} />
+  </main>
+</Layout>

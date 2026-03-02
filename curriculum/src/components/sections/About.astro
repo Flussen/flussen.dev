@@ -1,12 +1,20 @@
 ---
-import Section from "../Section.astro"
+import Section from "../Section.astro";
+import { getTranslation, type Locale } from "@/lib/i18n";
 
-import { basics } from "@cv"
-const { summary } = basics
+interface Props {
+  cvData: any;
+  locale: Locale;
+}
+
+const { cvData, locale } = Astro.props;
+const { summary } = cvData.basics;
 ---
 
-<Section title="About me">
-  <p>
-    {summary}
-  </p>
+<Section title={getTranslation(locale, "About me")}>
+  <article class="rounded-xl border border-border/60 bg-card/60 p-5 sm:p-6 backdrop-blur">
+    <p class="text-sm sm:text-base leading-relaxed text-muted-foreground whitespace-pre-line">
+      {summary}
+    </p>
+  </article>
 </Section>

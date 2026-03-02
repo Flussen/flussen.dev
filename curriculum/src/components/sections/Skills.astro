@@ -1,84 +1,53 @@
 ---
-import Section from "../Section.astro";
-import HTML from "@/icons/html.astro";
-import CSS from "@/icons/css.astro";
-import JavaScript from "@/icons/javascript.astro";
-import TypeScript from "@/icons/type.astro";
-import React from "@/icons/react.astro";
-import Node from "@/icons/node.astro";
-import MySQL from "@/icons/sql.astro";
-import Git from "@/icons/git.astro";
-import GitHub from "@/icons/GitHub.astro";
-import Tailwind from "@/icons/tailwind.astro";
-import Next from "@/icons/next.astro";
-import { skills } from "@cv";
-import Swift from "@/icons/swift.astro";
-import SwiftUI from "@/icons/swiftui.astro";
-import Kotlin from "@/icons/kotlin.astro";
-import Flutter from "@/icons/flutter.astro";
-import Golang from "@/icons/golang.astro";
-import Java from "@/icons/java.astro";
-import Linux from "@/icons/linux.astro";
-import PostgreSQL from "@/icons/postgresql.astro";
-import Docker from "@/icons/docker.astro"
+// src/components/SkillsBadges.astro
 
-const SKILLS_ICONS: Record<string, any> = {
-  HTML,
-  CSS,
-  JavaScript,
-  TypeScript,
-  React,
-  Node,
-  MySQL,
-  Git,
-  GitHub,
-  Next,
-  Tailwind,
-  Swift,
-  SwiftUI,
-  Kotlin,
-  Flutter,
-  Golang,
-  Java,
-  Linux,
-  PostgreSQL,
-  Docker,
+import GolangIcon from "../icons/golang.astro";
+import JavaIcon from "../icons/java.astro";
+import PostgresIcon from "../icons/postgresql.astro";
+import GitIcon from "../icons/git.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import LinuxIcon from "../icons/linux.astro";
+import DockerIcon from "../icons/docker.astro";
+import Section from "../Section.astro";
+import { getTranslation, type Locale } from "@/lib/i18n";
+
+interface Props {
+  cvData: any;
+  locale: Locale;
+}
+
+const { cvData, locale } = Astro.props;
+
+type Skill = {
+  name: string;
+  Icon: any;
 };
+
+const skills: Skill[] = [
+  { name: "Golang", Icon: GolangIcon },
+  { name: "Java", Icon: JavaIcon },
+  { name: "PostgreSQL", Icon: PostgresIcon },
+  { name: "Git", Icon: GitIcon },
+  { name: "GitHub", Icon: GitHubIcon },
+  { name: "Linux", Icon: LinuxIcon },
+  { name: "Docker", Icon: DockerIcon },
+];
 ---
 
-<Section title="Skills">
-  <ul>
-    {
-      skills.map(({ name }) => {
-        const iconName = name === "Next.js" ? "Next" : name;
-        const Icon = SKILLS_ICONS[iconName];
-
-        return (
-          <li>
-            {Icon && <Icon />} <span>{name}</span>
-          </li>
-        );
-      })
-    }
-  </ul>
+<Section title={getTranslation(locale, "Skills")}>
+  <div class="flex flex-wrap gap-1.5 sm:gap-2">
+    {skills.map(({ name, Icon }) => (
+      <div
+        class="inline-flex items-center rounded-md border border-border/60
+                bg-card/60 backdrop-blur px-2 py-0.5 sm:px-3 sm:py-1 text-xs sm:text-sm font-medium text-foreground/90
+               shadow-sm">
+        <span
+          class="flex h-4 w-4 sm:h-6 sm:w-6 items-center justify-center mr-1 sm:mr-0.5">
+          <Icon />
+        </span>
+        <span>{name}</span>
+      </div>
+    ))}
+  </div>
 </Section>
 
-<style>
-  ul {
-    display: inline-flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  li {
-    align-items: center;
-    background: #d8d8d8;
-    border-radius: 6px;
-    color: black;
-    display: flex;
-    font-size: 0.8rem;
-    font-weight: 500;
-    gap: 4px;
-    padding: 0.2rem 0.6rem;
-  }
-</style>
