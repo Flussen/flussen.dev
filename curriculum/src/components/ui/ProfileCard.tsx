@@ -4,11 +4,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 import {
-  BrandLinkedin,
   BrandGithub,
   BrandX,
   Envelope as MailIcon,
 } from "@mynaui/icons-react";
+import { Linkedin } from "lucide-react";
 
 interface BasicsLocation {
   region: string;
@@ -41,12 +41,11 @@ export interface ProfileCardProps {
 }
 
 function SocialIcon({ network }: { network: string }) {
-  const size = 30;
   return (
-    <span className={`text-[${size}px]`}>
-      {network === "LinkedIn" && <BrandLinkedin size={size}/>}
-      {network === "X" && <BrandX size={size} />}
-      {network === "GitHub" && <BrandGithub  size={size}/>}
+    <span>
+      {network === "LinkedIn" && <Linkedin className="size-5" strokeWidth={2.2} />}
+      {network === "X" && <BrandX className="size-5" />}
+      {network === "GitHub" && <BrandGithub className="size-5" />}
     </span>
   );
 }

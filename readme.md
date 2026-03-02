@@ -1,9 +1,14 @@
-[![Deploy to VPS](https://github.com/Flussen/flussen.dev/actions/workflows/deploy.yml/badge.svg)](https://github.com/Flussen/flussen.dev/actions/workflows/deploy.yml)
 # flussen.dev
 
-"Welcome to my personal website repository. This repository contains all the code and configurations for the automatic deployment of my website, [flussen.dev](https://flussen.dev), to my personal Ubuntu VPS, including my custom Nginx setup."
+Personal website repository for [flussen.dev](https://flussen.dev).
 
+/curriculum -> personal curriculum website (Astro + React)
 
-/curriculum -> here is my personal curriculum website mode
+## Deployment
 
-/server -> here is my backend simple server to get some information needed
+This project is prepared for Cloudflare Pages with direct GitHub integration.
+
+Cloudflare Pages settings:
+- Root directory: `curriculum`
+- Build command: `pnpm install --frozen-lockfile && pnpm build`
+- Build output directory: `dist`

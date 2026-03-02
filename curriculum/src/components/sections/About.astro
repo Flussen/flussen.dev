@@ -1,6 +1,5 @@
 ---
-import AboutMeCode from "../AboutMeCode"
-import Section from "../Section.astro"
+import Section from "../Section.astro";
 import { getTranslation, type Locale } from "@/lib/i18n";
 
 interface Props {
@@ -13,5 +12,9 @@ const { summary } = cvData.basics;
 ---
 
 <Section title={getTranslation(locale, "About me")}>
-  <AboutMeCode summary={summary} client:load />
+  <article class="rounded-xl border border-border/60 bg-card/60 p-5 sm:p-6 backdrop-blur">
+    <p class="text-sm sm:text-base leading-relaxed text-muted-foreground whitespace-pre-line">
+      {summary}
+    </p>
+  </article>
 </Section>
